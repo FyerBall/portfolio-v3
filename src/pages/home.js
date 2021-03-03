@@ -5,11 +5,12 @@
 // -[ ] GitHub
 
 import React from 'react';
+import Hero from '../components/Hero';
 
 function home() {
   return (
     <div>
-      <h3>Home</h3>
+      <Hero />
     </div>
   );
 }

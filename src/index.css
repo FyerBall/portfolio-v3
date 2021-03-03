@@ -3,3 +3,42 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+:root {
+  --primary-color: #534c4c;
+  --primary-color-light: #766d6d;
+  --secondary-color: #cfd8dc;
+  --white: #f5f5f5;
+
+  --line-height: 1.75;
+  --max-width: 1300px;
+  --border-radius: 1rem;
+  --border-radius-small: 0.5rem;
+}
+
+body {
+  /* TODO KEEP? */
+  line-height: var(--line-height);
+  /* END */
+}
+
+img {
+  max-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+li {
+  list-style: none;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: var(--max-width);
+}
+.section {
+  padding: 5rem 0;
+}
