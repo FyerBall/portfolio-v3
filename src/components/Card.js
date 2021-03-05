@@ -5,33 +5,36 @@
 // -[ ] A short description of the project
 // -[ ] Links
 
-import React from 'react';
-import styled from 'styled-components';
-
+import React from 'react'
+import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 function Card() {
   return (
     <Wrapper>
-      <div className='card'>
-        <div className='image__container'>
-          <img src='http://via.placeholder.com/350x150' alt='' />
-        </div>
-        <div className='content'>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex fugit at
-          error laudantium earum non, natus atque quaerat ratione possimus vel
-          voluptatem nemo itaque dolorem placeat, quam repellat facere illo!
-        </div>
-        <div className='footer'>
-          <span className='label'>Social Media</span>
-          <div className='libs'>
-            <button>Icon</button>
-            <button>Icon</button>
-            <button>Icon</button>
-            <button>Icon</button>
+      <Link to='/showcase/project'>
+        <div className='card'>
+          <div className='image__container'>
+            <img src='http://via.placeholder.com/350x150' alt='' />
+          </div>
+          <div className='content'>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex fugit
+            at error laudantium earum non, natus atque quaerat ratione possimus
+            vel voluptatem nemo itaque dolorem placeat, quam repellat facere
+            illo!
+          </div>
+          <div className='footer'>
+            <span className='label'>Social Media</span>
+            <div className='libs'>
+              <button>Icon</button>
+              <button>Icon</button>
+              <button>Icon</button>
+              <button>Icon</button>
+            </div>
           </div>
         </div>
-      </div>
+      </Link>
     </Wrapper>
-  );
+  )
 }
 
 const Wrapper = styled.div`
@@ -64,6 +67,6 @@ const Wrapper = styled.div`
       }
     }
   }
-`;
+`
 
-export default Card;
+export default Card
