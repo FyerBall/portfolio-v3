@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import styled from 'styled-components'
 
 function Archived() {
   let tempProjects = [
@@ -46,7 +46,7 @@ function Archived() {
         live: 'google.com',
       },
     },
-  ];
+  ]
   return (
     <Wrapper className='section'>
       <h1 className='title'>Archived</h1>
@@ -85,7 +85,7 @@ function Archived() {
       </table>
       <Link to='/archived'>See more</Link>
     </Wrapper>
-  );
+  )
 }
 
 const Wrapper = styled.section`
@@ -97,7 +97,7 @@ const Wrapper = styled.section`
     width: 100%;
     text-align: center;
     background-color: lightgoldenrodyellow;
-    border-radius: var(--border-radius);
+    border-radius: var(--radius);
     ul {
       display: flex;
       justify-content: space-around;
@@ -108,6 +108,6 @@ const Wrapper = styled.section`
     margin: 0 auto;
     display: block;
   }
-`;
+`
 
-export default Archived;
+export default Archived

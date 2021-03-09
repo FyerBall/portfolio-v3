@@ -8,6 +8,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import Icon from './Icon'
+import { FaReact } from 'react-icons/fa'
 function Card() {
   return (
     <Wrapper>
@@ -24,11 +26,11 @@ function Card() {
           </div>
           <div className='footer'>
             <span className='label'>Social Media</span>
+
             <div className='libs'>
-              <button>Icon</button>
-              <button>Icon</button>
-              <button>Icon</button>
-              <button>Icon</button>
+              <Icon Icon={FaReact} color='61dcfc' />
+              <Icon Icon={FaReact} color='61dcfc' />
+              <Icon Icon={FaReact} color='61dcfc' />
             </div>
           </div>
         </div>
@@ -38,33 +40,51 @@ function Card() {
 }
 
 const Wrapper = styled.div`
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
   .card {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 1rem;
-    margin: 1rem auto;
-    border: 2px solid #f2f2f2;
-    border-radius: var(--border-radius);
+    margin: 1rem 2px;
+    border: 2px solid var(--primary-color-light);
+    border-radius: var(--radius);
+    box-shadow: 0 1px 18px rgb(0 0 0 / 20%);
     img {
-      border-radius: var(--border-radius-small);
+      border-radius: var(--radius-small);
     }
 
     .footer {
-      background-color: lightgray;
+      background-color: var(--primary-color);
       width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 5px 10px;
+      border-radius: var(--radius);
 
       .label {
         color: white;
-        padding: 3px;
-        background: black;
+        padding: 0.37rem 0.75rem;
+        background: transparent;
         border-radius: 0.5rem;
+        border: 1px solid var(--secondary-color);
+        width: fit-content;
       }
+      .libs {
+        display: flex;
+        align-items: center;
+        & > * {
+          margin: 0 1px;
+        }
+      }
+    }
+    &:hover {
+      box-shadow: 0 1px 10px rgb(0 0 0 / 20%);
     }
   }
 `
