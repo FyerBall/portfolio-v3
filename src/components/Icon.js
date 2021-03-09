@@ -12,7 +12,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-import FigmaLogo from '../assets/FigmaLogo.svg'
+// import FigmaLogo from '../assets/FigmaLogo.svg'
 
 function Icon({ Icon, color, size, link, click, image, name }) {
   // ? You don't need react-router for external links <a href="..." would be fine to use
@@ -21,36 +21,33 @@ function Icon({ Icon, color, size, link, click, image, name }) {
     window.location.assign(`http://${link}`)
   }
 
-  const icons = () => {
-    if (link) {
-      return (
-        <Link to={`${link}`} target='_blank' onClick={handleClick}>
-          <Icon style={{ color: color, fontSize: size }} />
-        </Link>
-      )
-    } else {
-      return <Icon style={{ color: color, fontSize: size }} />
-    }
-  }
+  // const icons = () => {
+  //   if (link) {
+  //     return (
+  //       <Link to={`${link}`} target='_blank' onClick={handleClick}>
+  //         <Icon style={{ color: color, fontSize: size }} />
+  //       </Link>
+  //     )
+  //   } else {
+  //     return <Icon style={{ color: color, fontSize: size }} />
+  //   }
+  // }
 
-  const images = () => {
-    if (image && link) {
-      return (
-        <Link to={`${link}`} target='_blank' onClick={handleClick}>
-          <img src={image} alt={name} />
-        </Link>
-      )
-    } else {
-      return <img src={image} alt={name} />
-    }
-  }
+  // const images = () => {
+  //   if (image && link) {
+  //     return (
+  //       <Link to={`${link}`} target='_blank' onClick={handleClick}>
+  //         <img src={image} alt={name} />
+  //       </Link>
+  //     )
+  //   } else {
+  //     return <img src={image} alt={name} />
+  //   }
+  // }
 
   return (
     <Wrapper>
-      {Icon && icons()}
-      {image && images()}
-
-      {/* {link ? (
+      {link ? (
         <Link to={`${link}`} target='_blank' onClick={handleClick}>
           <Icon style={{ color: color, fontSize: size }} />
         </Link>
@@ -64,7 +61,7 @@ function Icon({ Icon, color, size, link, click, image, name }) {
         <Icon style={{ color: color, fontSize: size }} onClick={click} />
       ) : (
         <img src={image} alt={name} style={{ width: '4rem' }} />
-      )} */}
+      )}
 
       {/*       {link ? (
         <Link to={`${link}`} target='_blank' onClick={handleClick}>

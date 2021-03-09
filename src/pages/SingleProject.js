@@ -6,7 +6,7 @@ import Images from '../components/Images'
 import { FaReact } from 'react-icons/fa'
 import Todos from '../components/Todos'
 import { FaGithub } from 'react-icons/fa'
-import FigmaLogo from '../assets/FigmaLogo.svg'
+// import FigmaLogo from '../assets/FigmaLogo.svg'
 
 function SingleProject() {
   return (
@@ -71,12 +71,8 @@ function SingleProject() {
         <div className='links'>
           <h2 className='title'>Links</h2>
           {/* TODO: DRY - Footer has one */}
+          {/* TODO: Hover issue */}
           <Icon Icon={FaGithub} color='lightcoral' link='google.com' />
-          <Icon Icon={FaGithub} color='lightcoral' />
-          <Icon image={FigmaLogo} />
-
-          {/* <Link to='/live'>Live</Link>
-          <Link to='/live'>source</Link> */}
         </div>
       </section>
     </Wrapper>

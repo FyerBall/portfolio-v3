@@ -7,7 +7,9 @@ function Hero() {
     <Wrapper>
       <div className='main'>
         <h1 className='title-big'>Meshari</h1>
+
         <p className='label'>Let's make a difference, for the better.</p>
+
         {/* TODO: Link to work section */}
         <Link to='/' className='btn btn-primary bouncy'>
           My work
@@ -29,10 +31,12 @@ const Wrapper = styled.main`
   .main {
     line-height: var(--line-height);
     text-align: center;
+
     .label {
       text-align: center;
       color: var(--primary-color);
-      background-color: var(--secondary-color);
+      background-color: var(--primary-color-light);
+      font-size: 25px;
       width: fit-content;
       margin: 0 auto;
       padding: 0 5px;

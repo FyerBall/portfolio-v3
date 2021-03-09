@@ -1,17 +1,20 @@
 import React from 'react'
 import Icon from './Icon'
 import { FaGithub } from 'react-icons/fa'
-import { HiOutlineMail } from 'react-icons/hi'
+import styled from 'styled-components'
 function Footer() {
   return (
-    <div className='secondary'>
+    <Wrapper className=''>
       {/* TODO: dynamic links  */}
-      <h2>Footer</h2>
-      <Icon Icon={FaGithub} link='google.com' />
 
-      <Icon Icon={HiOutlineMail} />
-    </div>
+      <Icon Icon={FaGithub} />
+    </Wrapper>
   )
 }
+
+const Wrapper = styled.footer`
+  display: grid;
+  justify-content: center;
+`
 
 export default Footer
