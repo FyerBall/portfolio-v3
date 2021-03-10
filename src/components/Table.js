@@ -91,13 +91,14 @@ function Table() {
 }
 
 const Grid = styled.div`
-  background-color: var(--primary-color-2);
   position: relative;
   padding: 1rem;
   border-radius: var(--radius);
-  border: 2px solid var(--primary-color);
 
-  background-color: #eef2f8;
+  /*  */
+  background: var(--white);
+  box-shadow: 20px 20px 60px #d0d0d0, -20px -20px 60px #ffffff;
+  /*  */
   .header,
   .row {
     display: grid;
@@ -105,11 +106,11 @@ const Grid = styled.div`
     margin-bottom: 5px;
     background-color: var(--primary-color-light);
     color: #444;
-    /* color: var(--secondary-color-light); */
+
     align-items: center;
     text-align: center;
     border-radius: var(--radius-small);
-
+    border: 2px solid var(--primary-color-light);
     background: var(--white);
   }
 

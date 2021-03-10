@@ -27,12 +27,13 @@ const Wrapper = styled.div`
     flex-direction: column;
     justify-content: center;
 
-    background: var(--white-2);
     margin-left: auto;
     margin-right: auto;
     padding: 1rem;
     border-radius: var(--radius);
-    border: 2px solid var(--primary-color);
+
+    background: var(--white);
+    box-shadow: 20px 20px 60px #d0d0d0, -20px -20px 60px #ffffff;
 
     width: 50%;
     input,
