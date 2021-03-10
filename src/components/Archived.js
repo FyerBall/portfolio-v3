@@ -12,26 +12,6 @@ function Archived() {
   )
 }
 
-const Wrapper = styled.section`
-  .title {
-    text-align: center;
-  }
-  table {
-    margin: 1rem auto;
-    width: 100%;
-    text-align: center;
-    background-color: lightgoldenrodyellow;
-    border-radius: var(--radius);
-    ul {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-    }
-  }
-  button {
-    margin: 0 auto;
-    display: block;
-  }
-`
+const Wrapper = styled.section``
 
 export default Archived

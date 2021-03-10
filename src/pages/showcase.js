@@ -8,7 +8,7 @@ import Card from '../components/Card'
 function showcase() {
   return (
     <Wrapper className='section'>
-      <h1 className='title-primary'>Portfolio</h1>
+      <h1 className='title-primary'>Recent work</h1>
 
       <article className='main'>
         <Card />

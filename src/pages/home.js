@@ -17,6 +17,7 @@ function home() {
       <Hero />
       <div className='container'>
         <Showcase />
+
         <div className='archived'>
           <Archived />
         </div>

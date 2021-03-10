@@ -4,6 +4,7 @@
 //    -[ ] Multiple images?? Main Image?? carousel maybe
 // -[ ] A short description of the project
 // -[ ] Links
+// Status ? Completed, IP...
 
 import React from 'react'
 import styled from 'styled-components'
@@ -51,15 +52,19 @@ const Wrapper = styled.div`
     align-items: center;
     padding: 1rem;
     margin: 1rem 2px;
-    border: 2px solid var(--primary-color-light);
     border-radius: var(--radius);
-    box-shadow: 0 1px 18px rgb(0 0 0 / 20%);
+
+    background: var(--white);
+
+    box-shadow: 10px 20px 30px #d0d0d0, -10px -20px 30px #ffffff;
+
+    transition: var(--transition);
+
     img {
       border-radius: var(--radius-small);
     }
 
     .footer {
-      background-color: var(--primary-color);
       width: 100%;
       display: flex;
       justify-content: space-between;
@@ -67,8 +72,11 @@ const Wrapper = styled.div`
       padding: 5px 10px;
       border-radius: var(--radius);
 
+      background: var(--white);
+      box-shadow: 16px 17px 30px #d0d0d0, -16px -17px 30px #ffffff;
+
       .label {
-        color: white;
+        color: var(--primary-color-light);
         padding: 0.37rem 0.75rem;
         background: transparent;
         border-radius: 0.5rem;
@@ -85,6 +93,7 @@ const Wrapper = styled.div`
     }
     &:hover {
       box-shadow: 0 1px 10px rgb(0 0 0 / 20%);
+      transform: scale(1.02);
     }
   }
 `

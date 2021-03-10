@@ -96,6 +96,8 @@ const Grid = styled.div`
   padding: 1rem;
   border-radius: var(--radius);
   border: 2px solid var(--primary-color);
+
+  background-color: #eef2f8;
   .header,
   .row {
     display: grid;
@@ -107,10 +109,12 @@ const Grid = styled.div`
     align-items: center;
     text-align: center;
     border-radius: var(--radius-small);
+
+    background: var(--white);
   }
 
   .header {
-    background-color: var(--primary-color-light);
+    /* background-color: var(--primary-color-light); */
 
     .title {
       width: 100%;

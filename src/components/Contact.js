@@ -13,7 +13,9 @@ function Contact() {
         <input type='text' placeholder='your role' />
         <textarea placeholder='your message' cols='30' rows='10'></textarea>
 
-        <button type='submit'>send</button>
+        <button type='submit' className='btn'>
+          send
+        </button>
       </form>
     </Wrapper>
   )
@@ -25,21 +27,29 @@ const Wrapper = styled.div`
     flex-direction: column;
     justify-content: center;
 
-    background-color: var(--primary-color-2);
-
+    background: var(--white-2);
+    margin-left: auto;
+    margin-right: auto;
     padding: 1rem;
     border-radius: var(--radius);
     border: 2px solid var(--primary-color);
+
+    width: 50%;
     input,
     textarea {
       outline: none;
       margin-bottom: 10px;
-
+      width: 100%;
       border: none;
+
+      padding: 1rem;
+    }
+    input {
     }
 
     .message {
       margin-bottom: 10px;
+      text-align: center;
     }
   }
 `
