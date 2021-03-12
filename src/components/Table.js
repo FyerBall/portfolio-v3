@@ -66,7 +66,7 @@ function Table() {
 
       {tempProjects.map(({ id, year, title, built, links }) => {
         return (
-          <div className='row'>
+          <div className='row' key={id}>
             <p className='number'>{id}</p>
             <p className='year'>{year}</p>
             <p className='title'>{title}</p>
@@ -103,6 +103,8 @@ const Grid = styled.div`
   .row {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    grid-template-columns: 45px 80px 1fr 1fr 1fr;
+
     margin-bottom: 5px;
     background-color: var(--primary-color-light);
     color: #444;
@@ -143,6 +145,23 @@ const Grid = styled.div`
     text-align: center;
     .more {
       margin-top: 10px;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .header,
+    .row {
+      grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    }
+
+    .number,
+    .year {
+      display: none;
+    }
+  }
+  @media (max-width: 750px) {
+    .links-list {
+      flex-direction: column;
     }
   }
 `

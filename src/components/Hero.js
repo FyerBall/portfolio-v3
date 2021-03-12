@@ -29,6 +29,7 @@ const Wrapper = styled.main`
   justify-content: center;
 
   background-color: var(--white-2);
+
   position: relative;
 
   .main {

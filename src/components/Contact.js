@@ -13,7 +13,7 @@ function Contact() {
         <input type='text' placeholder='your role' />
         <textarea placeholder='your message' cols='30' rows='10'></textarea>
 
-        <button type='submit' className='btn'>
+        <button type='submit' className='btn btn-primary'>
           send
         </button>
       </form>

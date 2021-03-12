@@ -1,4 +1,5 @@
 // -[] Email
+// -[] About me
 // import React from 'react'
 // import { FaReact } from 'react-icons/fa'
 // import { v4 as uuidv4 } from 'uuid'

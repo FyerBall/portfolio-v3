@@ -1,26 +1,15 @@
+// TODO: FIX GALLERY
+
 import React, { useState } from 'react'
 import { AiFillLeftCircle, AiFillRightCircle } from 'react-icons/ai'
 import styled from 'styled-components'
 import Icon from '../components/Icon'
 
-function Images() {
-  const images = [
-    {
-      id: 1,
-      image: 'http://via.placeholder.com/350x150/0000ff/808080',
-    },
-    {
-      id: 2,
-      image: 'http://via.placeholder.com/350x150/ff0000/ffffff',
-    },
-    {
-      id: 3,
-      image: 'http://via.placeholder.com/350x150',
-    },
-  ]
-  // ? Main image??
+function Images({ images }) {
+  let url = images.map(({ url }) => url)
+
   const [index, setIndex] = useState(0)
-  const { image } = images[index]
+  const image = url[index]
 
   const checkLength = (num) => {
     if (num > images.length - 1) {
@@ -51,18 +40,13 @@ function Images() {
       <div className='images-container'>
         <img src={image} alt='' />
         <div className='arrows'>
-          <Icon
-            Icon={AiFillLeftCircle}
-            color='766d6d'
-            className=' left'
-            click={preImage}
-          />
-          <Icon
-            Icon={AiFillRightCircle}
-            color='766d6d'
-            className=' right'
-            click={nextImage}
-          />
+          <AiFillLeftCircle className=' left' onClick={preImage} />
+          <AiFillRightCircle className=' right' onClick={nextImage} />
+        </div>
+        <div className='image__gallery'>
+          {images.map(({ url }, index) => (
+            <img key={index} src={url} alt='' />
+          ))}
         </div>
       </div>
     </Wrapper>
@@ -76,10 +60,13 @@ const Wrapper = styled.div`
   }
   .images-container {
     position: relative;
+
     img {
       display: block;
       margin: auto;
       width: 50%;
+      border-radius: var(--radius);
+      height: 600px;
     }
     .arrows {
       position: absolute;
@@ -89,15 +76,43 @@ const Wrapper = styled.div`
       bottom: 50%;
       align-items: center;
       justify-content: space-around;
-      
-      li {
-         background: var(--secondary-color-light);
-      }
-      }
+      cursor: pointer;
+      .left,
+      .right {
+        color: #766d6d;
+        height: 2rem;
+        width: 2rem;
+        background-color: var(--white);
+        border-radius: var(--radius-small);
+        transition: var(--transition);
 
-      svg {
-        font-size: 2rem;
-        cursor: pointer;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+
+  .image__gallery {
+    margin-top: 1rem;
+
+    display: flex;
+    justify-content: center;
+
+    img {
+      height: 100px;
+      width: 100px;
+      cursor: pointer;
+      margin: 0 10px;
+    }
+  }
+  @media (max-width: 820px) {
+    .images-container {
+      img {
+        width: 100%;
+      }
+      .arrows {
+        visibility: hidden;
       }
     }
   }

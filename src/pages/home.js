@@ -11,7 +11,7 @@ import Footer from '../components/Footer'
 import Hero from '../components/Hero'
 import { Showcase } from './index'
 
-function home() {
+function Home() {
   return (
     <div>
       <Hero />
@@ -28,4 +28,4 @@ function home() {
   )
 }
 
-export default home
+export default Home

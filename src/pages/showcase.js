@@ -1,20 +1,33 @@
 // -[x] Main Projects
 // -[ ] Archived Projects to show growth?
 // -[ ] Contact
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import Card from '../components/Card'
+import axios from 'axios'
 
-function showcase() {
+const url = 'api/projects'
+function Showcase() {
+  const [projects, setProjects] = useState([])
+
+  const fetchData = async () => {
+    try {
+      const { data } = await axios.get(url)
+      setProjects(data)
+    } catch (error) {}
+  }
+  useEffect(() => {
+    fetchData()
+    return () => {}
+  }, [])
   return (
     <Wrapper className='section'>
       <h1 className='title-primary'>Recent work</h1>
 
       <article className='main'>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {projects.map((project) => (
+          <Card key={project.id} {...project} />
+        ))}
       </article>
     </Wrapper>
   )
@@ -27,4 +40,4 @@ const Wrapper = styled.section`
     gap: 1rem;
   }
 `
-export default showcase
+export default Showcase

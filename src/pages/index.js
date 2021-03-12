@@ -1,5 +1,5 @@
-import Home from './home'
-import Showcase from './showcase'
+import Home from './Home'
+import Showcase from './Showcase'
 import SingleProject from './SingleProject'
 
 export { Home, Showcase, SingleProject }

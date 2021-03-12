@@ -10,28 +10,32 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import Icon from './Icon'
-import { FaReact } from 'react-icons/fa'
-function Card() {
+function Card(project) {
+  const { id, desc, imageUrl, name, libraryUrl } = project
+
+  const mainImage = imageUrl[0]
+
+  const charLimit = 120
   return (
     <Wrapper>
-      <Link to='/showcase/project'>
+      <Link to={`/project/${id}`}>
         <div className='card'>
-          <div className='image__container'>
-            <img src='http://via.placeholder.com/350x150' alt='' />
-          </div>
-          <div className='content'>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex fugit
-            at error laudantium earum non, natus atque quaerat ratione possimus
-            vel voluptatem nemo itaque dolorem placeat, quam repellat facere
-            illo!
+          <div className='header'>
+            <div className='image__container'>
+              <img src={mainImage} alt={name} className='image' />
+            </div>
+            <div className='content'>{`${desc.substring(
+              0,
+              charLimit
+            )}...`}</div>
           </div>
           <div className='footer'>
-            <span className='label'>Social Media</span>
+            <span className='label'>{name}</span>
 
             <div className='libs'>
-              <Icon Icon={FaReact} color='61dcfc' />
-              <Icon Icon={FaReact} color='61dcfc' />
-              <Icon Icon={FaReact} color='61dcfc' />
+              {libraryUrl.map((lib, _index) => (
+                <Icon key={_index} icon={lib} alt='Built with' />
+              ))}
             </div>
           </div>
         </div>
@@ -40,7 +44,8 @@ function Card() {
   )
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled.article`
+  height: 100%;
   a {
     color: inherit;
     text-decoration: none;
@@ -48,7 +53,7 @@ const Wrapper = styled.div`
   .card {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     padding: 1rem;
     margin: 1rem 2px;
@@ -59,11 +64,22 @@ const Wrapper = styled.div`
     box-shadow: 10px 20px 30px #d0d0d0, -10px -20px 30px #ffffff;
 
     transition: var(--transition);
+    height: 100%;
 
-    img {
+    .image__container {
+      /* height: 200px; */
+      width: 300px;
+      height: 200px;
+    }
+    .image {
       border-radius: var(--radius-small);
+      height: 100%;
+      width: 100%;
     }
 
+    .content {
+      padding: 4px;
+    }
     .footer {
       width: 100%;
       display: flex;
@@ -71,7 +87,7 @@ const Wrapper = styled.div`
       align-items: center;
       padding: 5px 10px;
       border-radius: var(--radius);
-
+      margin-top: 1rem;
       background: var(--white);
       box-shadow: 16px 17px 30px #d0d0d0, -16px -17px 30px #ffffff;
 
