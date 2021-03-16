@@ -25,6 +25,10 @@
   --transition: all 0.3s linear;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   /* TODO KEEP line height? */
   line-height: var(--line-height);
@@ -61,10 +65,10 @@ h5 {
 
 a {
   text-decoration: none;
-  color: var(--primary-color);
+  color: var(--primary-dark);
 }
 a:hover {
-  color: var(--primary-dark);
+  color: var(--primary-color);
 }
 .container {
   margin: 0 auto;

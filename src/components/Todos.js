@@ -1,11 +1,16 @@
 import React from 'react'
 
-function Todos() {
+// TODO AUTH -> Admin only
+function Todos({ todo }) {
+  let user = false
+
+  if (!user) {
+    return <h1>Log in</h1>
+  }
   return (
-    <div className='todos'>
-      <h2 className='title '>todos</h2>
-      <p className='description content'>
-        next steps, if any, to mark the app as complete
+    <div className=''>
+      <p className=' content todos'>
+        <input type='checkbox' name={todo} id='todo' /> {todo}
       </p>
     </div>
   )

@@ -3,13 +3,13 @@
 import React, { useState } from 'react'
 import { AiFillLeftCircle, AiFillRightCircle } from 'react-icons/ai'
 import styled from 'styled-components'
-import Icon from '../components/Icon'
 
 function Images({ images }) {
   let url = images.map(({ url }) => url)
+  let filename = images.map(({ filename }) => filename)
 
-  const [index, setIndex] = useState(0)
-  const image = url[index]
+  const [main, setMain] = useState(0)
+  const image = url[main]
 
   const checkLength = (num) => {
     if (num > images.length - 1) {
@@ -22,14 +22,14 @@ function Images({ images }) {
   }
 
   const preImage = () => {
-    setIndex((index) => {
+    setMain((index) => {
       let newIndex = index - 1
       return checkLength(newIndex)
     })
   }
 
   const nextImage = () => {
-    setIndex((index) => {
+    setMain((index) => {
       let newIndex = index + 1
       return checkLength(newIndex)
     })
@@ -38,14 +38,23 @@ function Images({ images }) {
     <Wrapper className='images'>
       <h2 className='title'>images</h2>
       <div className='images-container'>
+        <h4 className='filename'>
+          {filename[main].split('.')[0].split('-').join(' ')}
+        </h4>
         <img src={image} alt='' />
         <div className='arrows'>
           <AiFillLeftCircle className=' left' onClick={preImage} />
           <AiFillRightCircle className=' right' onClick={nextImage} />
         </div>
-        <div className='image__gallery'>
+        <div className='gallery'>
           {images.map(({ url }, index) => (
-            <img key={index} src={url} alt='' />
+            <img
+              key={index}
+              src={url}
+              alt=''
+              onClick={() => setMain(index)}
+              className={`${url === image ? 'active' : null} `}
+            />
           ))}
         </div>
       </div>
@@ -55,28 +64,45 @@ function Images({ images }) {
 
 const Wrapper = styled.div`
   margin-bottom: 3rem;
+
   .title {
     text-transform: capitalize;
   }
   .images-container {
     position: relative;
 
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin: auto;
     img {
-      display: block;
+      /* display: block;
       margin: auto;
       width: 50%;
       border-radius: var(--radius);
-      height: 600px;
+      */
+      max-height: 500px;
+
+      width: 100%;
+      display: block;
+      border-radius: var(--radius);
+      object-fit: contain;
+    }
+
+    .filename {
+      text-align: center;
     }
     .arrows {
       position: absolute;
       display: flex;
-      width: 100%;
+      width: 106%;
       top: 50%;
       bottom: 50%;
+      transform: translate(-3%, 0%);
       align-items: center;
-      justify-content: space-around;
+      justify-content: space-between;
       cursor: pointer;
+
       .left,
       .right {
         color: #766d6d;
@@ -93,11 +119,11 @@ const Wrapper = styled.div`
     }
   }
 
-  .image__gallery {
+  .gallery {
     margin-top: 1rem;
-
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    overflow-x: auto;
 
     img {
       height: 100px;
@@ -106,8 +132,14 @@ const Wrapper = styled.div`
       margin: 0 10px;
     }
   }
+
+  .active {
+    border: 1px solid var(--primary-color-light);
+    padding: 1px;
+  }
   @media (max-width: 820px) {
     .images-container {
+      width: 100%;
       img {
         width: 100%;
       }

@@ -10,6 +10,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import Icon from './Icon'
+
 function Card(project) {
   const { id, desc, imageUrl, name, libraryUrl } = project
 
@@ -75,6 +76,7 @@ const Wrapper = styled.article`
       border-radius: var(--radius-small);
       height: 100%;
       width: 100%;
+      background-position: center;
     }
 
     .content {

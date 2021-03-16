@@ -8,25 +8,24 @@
 // TRYING TO PASS SVG WITH OR WITHOUT A LINK
 // AND TRYING TO DO THE SAME FOR IMAGES
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import { openWindow } from '../Helper/OpenWindow'
+import { addhttp } from '../Helper/addhttp'
 
 // import FigmaLogo from '../assets/FigmaLogo.svg'
 
+// TODO: Do you need all of those???
 function Icon({ icon, link, click, image, alt }) {
-  // ? You don't need react-router for external links <a href="..." would be fine to use
-  const handleClick = () => {
-    // do something meaningful, Promises, if/else, whatever, and then
-    window.location.assign(`http://${link}`)
-  }
-
+  const http = addhttp(link)
   return (
     <Wrapper>
+      {/* TODO: Helper func. */}
       {link ? (
-        <Link to={`${link}`} target='_blank' onClick={handleClick}>
+        <a href={http} target='_blank' rel='noreferrer'>
           <img src={icon} alt={alt} />
-        </Link>
+        </a>
       ) : (
         <img src={icon} alt='' />
       )}

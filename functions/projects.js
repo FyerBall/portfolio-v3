@@ -41,6 +41,8 @@ exports.handler = async (event, context) => {
         archived,
         category,
         details,
+        libraryInfo,
+        todos,
       } = product.fields
       const imageUrl = image.map(({ url }) => url)
       const libraryUrl = library.map(({ url }) => url)
@@ -56,6 +58,8 @@ exports.handler = async (event, context) => {
         archived,
         category,
         details,
+        libraryInfo,
+        todos,
       }
     })
     return {
