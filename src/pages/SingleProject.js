@@ -69,7 +69,7 @@ function SingleProject() {
           <p className='description content'>{details}</p>
         </div>
         <div className='libs'>
-          <h2 className='title '>What I used</h2>
+          <h2 className='title '>Built with</h2>
           <ul className='icons'>
             {library.map(({ filename, url, id }) => {
               return <Icon icon={url} alt={filename} key={id} />

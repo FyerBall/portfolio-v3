@@ -96,8 +96,9 @@ const Grid = styled.div`
   border-radius: var(--radius);
 
   /*  */
-  background: var(--white);
-  box-shadow: 20px 20px 60px #d0d0d0, -20px -20px 60px #ffffff;
+  background: var(--background-color);
+  box-shadow: 20px 20px 60px var(--shadow-bottom),
+    -20px -20px 60px var(--shadow-top);
   /*  */
   .header,
   .row {
@@ -106,14 +107,12 @@ const Grid = styled.div`
     grid-template-columns: 45px 80px 1fr 1fr 1fr;
 
     margin-bottom: 5px;
-    background-color: var(--primary-color-light);
-    color: #444;
-
+    color: var(--primary-color);
     align-items: center;
     text-align: center;
     border-radius: var(--radius-small);
     border: 2px solid var(--primary-color-light);
-    background: var(--white);
+    /* background: var(--white); */
   }
 
   .header {

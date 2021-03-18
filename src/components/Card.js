@@ -60,9 +60,10 @@ const Wrapper = styled.article`
     margin: 1rem 2px;
     border-radius: var(--radius);
 
-    background: var(--white);
+    background: var(--background-color);
 
-    box-shadow: 10px 20px 30px #d0d0d0, -10px -20px 30px #ffffff;
+    box-shadow: 10px 20px 30px var(--shadow-bottom),
+      -10px -20px 30px var(--shadow-top);
 
     transition: var(--transition);
     height: 100%;
@@ -90,11 +91,11 @@ const Wrapper = styled.article`
       padding: 5px 10px;
       border-radius: var(--radius);
       margin-top: 1rem;
-      background: var(--white);
-      box-shadow: 16px 17px 30px #d0d0d0, -16px -17px 30px #ffffff;
+      box-shadow: 16px 17px 30px var(--shadow-bottom),
+        -16px -17px 30px var(--shadow-top);
 
       .label {
-        color: var(--primary-color-light);
+        color: var(--primary-color);
         padding: 0.37rem 0.75rem;
         background: transparent;
         border-radius: 0.5rem;

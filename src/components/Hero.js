@@ -28,7 +28,7 @@ const Wrapper = styled.main`
   align-items: center;
   justify-content: center;
 
-  background-color: var(--white-2);
+  /* background-color: var(--white-2); */
 
   position: relative;
 
@@ -38,10 +38,11 @@ const Wrapper = styled.main`
 
     z-index: 999;
     border-radius: 50px;
-    background: var(--white-2);
-    box-shadow: 20px 20px 60px #d0d0d0, -20px -20px 60px transparent;
+    background: var(--background-color);
+    box-shadow: 20px 20px 60px var(--shadow-bottom),
+      -20px -20px 60px transparent;
     padding: 1rem;
-    color: #444;
+    color: var(--primary-color);
 
     .label {
       text-align: center;
@@ -53,8 +54,8 @@ const Wrapper = styled.main`
       border-radius: var(--radius-small);
       margin-bottom: 2rem;
       /* TODO: var(--color???) */
-      color: #edf2f8;
-      background-color: #44454c;
+      color: var(--background-color);
+      background-color: var(--primary-color);
     }
     .cta {
       color: #f3f4f6;

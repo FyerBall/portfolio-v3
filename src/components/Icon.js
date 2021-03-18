@@ -36,7 +36,7 @@ function Icon({ icon, link, click, image, alt }) {
 const Wrapper = styled.span`
   img {
     width: 3rem;
-
+    height: 3rem;
     transition: var(--transition);
     padding: 5px;
     border-radius: var(--radius-small);

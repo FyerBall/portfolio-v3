@@ -72,8 +72,9 @@ const Wrapper = styled.div`
     border-radius: var(--radius);
     /* width: 100%; */
     width: 50%;
-    background: var(--white);
-    box-shadow: 20px 20px 60px #d0d0d0, -20px -20px 60px #ffffff;
+
+    box-shadow: 20px 20px 60px var(--shadow-bottom),
+      -20px -20px 60px var(--shadow-top);
     padding: 1rem;
     margin-left: auto;
     margin-right: auto;
@@ -120,8 +121,8 @@ const Wrapper = styled.div`
       padding: 0 5px;
       border-radius: var(--radius-small);
       margin-bottom: 2rem;
-      color: #edf2f8;
-      background-color: #44454c;
+      color: var(--background-color);
+      background-color: var(--primary-color);
     }
   }
 

@@ -70,11 +70,11 @@ const Wrapper = styled.div`
   }
   .images-container {
     position: relative;
-
     max-width: 90%;
     margin-left: auto;
     margin-right: auto;
     margin: auto;
+
     img {
       /* display: block;
       margin: auto;
