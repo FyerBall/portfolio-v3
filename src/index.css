@@ -188,3 +188,7 @@ a:hover {
 .highlight-large {
   font-size: 25px;
 }
+
+.numbered-list {
+  list-style: decimal;
+}

@@ -5,7 +5,6 @@ import { useTheme } from '../context/themeContext'
 
 function Hero() {
   const { theme, darkMode, lightMode } = useTheme()
-  console.log(darkMode, lightMode)
 
   const checkTheme = () => {
     if (theme === darkMode) {

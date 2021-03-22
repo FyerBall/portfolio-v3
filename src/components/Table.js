@@ -8,52 +8,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import { useProjects } from '../context/projectContext'
+import ProjectLinks from '../Helper/ProjectLinks'
+import Icon from './Icon'
 
 function Table() {
-  let tempProjects = [
-    {
-      id: 1,
-      year: 2020,
-      title: 'Lorem ipsum dolor sit amet.1',
-      built: {
-        react: 'React',
-        firebase: 'firebase',
-        styled: 'styled',
-      },
-      links: {
-        source: 'google.com',
-        live: 'google.com',
-      },
-    },
-    {
-      id: 2,
-      year: 2021,
-      title: 'Lorem ipsum dolor sit amet.2',
-      built: {
-        icon: 'icon',
-        icon2: 'icon',
-        icon3: 'icon',
-      },
-      links: {
-        source: 'google.com',
-        live: 'google.com',
-      },
-    },
-    {
-      id: 3,
-      year: 2021,
-      title: 'Lorem ipsum dolor sit amet.3',
-      built: {
-        icon: 'icon',
-        icon2: 'icon',
-        icon3: 'icon',
-      },
-      links: {
-        source: 'google.com',
-        live: 'google.com',
-      },
-    },
-  ]
+  const { archived } = useProjects()
   return (
     <Grid>
       <div className='header'>
@@ -64,18 +24,23 @@ function Table() {
         <h2 className='title links'>links</h2>
       </div>
 
-      {tempProjects.map(({ id, year, title, built, links }) => {
+      {archived.map((project, i) => {
+        const { id, name, libraryUrl, year, linkLive, linkSource } = project
+
+        console.log(project)
+        const num = i + 1
         return (
           <div className='row' key={id}>
-            <p className='number'>{id}</p>
+            <p className='number'>{num}</p>
             <p className='year'>{year}</p>
-            <p className='title'>{title}</p>
-
-            <p className='built'>React Firebase</p>
+            <p className='title'>{name}</p>
+            <p className='built'>
+              {libraryUrl.map((lib, _index) => (
+                <Icon key={_index} icon={lib} alt='Built with' />
+              ))}
+            </p>
             <ul className='links-list'>
-              <li>links</li>
-              <li>links</li>
-              <li>links</li>
+              <ProjectLinks live={linkLive} source={linkSource} />
             </ul>
           </div>
         )
@@ -104,8 +69,8 @@ const Grid = styled.div`
   .row {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
-    grid-template-columns: 45px 80px 1fr 1fr 1fr;
-
+    grid-template-columns: 45px 80px 2fr 1fr 200px;
+    padding: 5px 0;
     margin-bottom: 5px;
     color: var(--primary-color);
     align-items: center;
@@ -134,10 +99,14 @@ const Grid = styled.div`
     }
   }
 
-  .links-list {
+  .links-list,
+  .built {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    img {
+      margin: 0 1px;
+    }
   }
 
   .footer {

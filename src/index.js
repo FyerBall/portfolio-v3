@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom'
 import './index.css'
 import App from './App'
 import { ThemeProvider } from './context/themeContext'
+import { ProjectsProvider } from './context/projectContext'
 
 ReactDOM.render(
   <ThemeProvider>
-    <App />
+    <ProjectsProvider>
+      <App />
+    </ProjectsProvider>
   </ThemeProvider>,
 
   document.getElementById('root')

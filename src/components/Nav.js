@@ -1,10 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useTheme } from '../context/themeContext'
 import Toggle from './Toggle'
 // TODO: Toggle for dark and light
 function Nav() {
-  console.log(useTheme())
   return (
     <Wrapper className=''>
       <div className='nav-container container'>
