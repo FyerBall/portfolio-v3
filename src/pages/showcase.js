@@ -4,17 +4,20 @@
 import React from 'react'
 import styled from 'styled-components'
 import Card from '../components/Card'
+import { useProjects } from '../context/projectContext'
+// import Skeleton from '@material-ui/lab/Skeleton'
 
-function showcase() {
+function Showcase() {
+  const { showcase } = useProjects()
+
   return (
     <Wrapper className='section'>
-      <h1 className='title-primary'>Portfolio</h1>
+      <h1 className='title-primary'>Recent work</h1>
 
       <article className='main'>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {showcase.map((project) => (
+          <Card key={project.id} {...project} />
+        ))}
       </article>
     </Wrapper>
   )
@@ -27,4 +30,4 @@ const Wrapper = styled.section`
     gap: 1rem;
   }
 `
-export default showcase
+export default Showcase

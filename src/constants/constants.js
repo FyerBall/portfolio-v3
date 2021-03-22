@@ -1,22 +1,16 @@
-// -[] Email
-// import React from 'react'
-// import { FaReact } from 'react-icons/fa'
-// import { v4 as uuidv4 } from 'uuid'
-// const reactIcon =
-//   'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png'
+import githubLogo from '../assets/github.svg'
+import firebaseLogo from '../assets/FirebaseLogo.svg'
+export const email = 'meshari@meshariabid.com'
 
-// -[] Icons
+// ICONS
+export const firebase = firebaseLogo
+export const github = githubLogo
 
-// -[] Main Projects
-//  -[] Images
-//  -[] Links
-//    -[] Source
-//    -[] Live
-//  -[] Desc.
-//  -[] lib. used
+// Links
+export const githubLink = 'https://github.com/FyerBall'
 
-// -[] Archive
-//  -[] Title
-//  -[] Lib. used
-//  -[] Links
-//  -[] Year?
+export const aboutMe = `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit non laudantium sapiente ea. Porro exercitationem veritatis dicta magnam id deserunt et repudiandae, provident labore, in eius dolorum vero a quaerat.
+Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit non laudantium sapiente ea. Porro exercitationem veritatis dicta magnam id deserunt et repudiandae, provident labore, in eius dolorum vero a quaerat.
+`
+// API
+export const apiUrl = 'api/projects'

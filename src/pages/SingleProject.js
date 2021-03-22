@@ -1,82 +1,101 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { Link, useParams } from 'react-router-dom'
 import styled from 'styled-components'
 import Icon from '../components/Icon'
 import Images from '../components/Images'
-import { FaReact } from 'react-icons/fa'
+// import { FaReact } from 'react-icons/fa'
 import Todos from '../components/Todos'
 import { FaGithub } from 'react-icons/fa'
-import FigmaLogo from '../assets/FigmaLogo.svg'
+import axios from 'axios'
+// import FigmaLogo from '../assets/FigmaLogo.svg'
+import Highlighter from 'react-highlight-words'
+import Loading from '../components/Loading'
+import { FaCheckCircle } from 'react-icons/fa'
+import githubLogo from '../assets/github.svg'
+import ProjectLinks from '../Helper/ProjectLinks'
+import NavBanner from '../components/NavBanner'
 
 function SingleProject() {
+  const { projectId } = useParams()
+  const [loading, setLoading] = useState(true)
+  const [project, setProject] = useState()
+
+  const fetchData = async () => {
+    try {
+      const { data } = await axios.get(`/api/projects?id=${projectId}`)
+      setProject(data)
+    } catch (error) {}
+    setLoading(false)
+  }
+
+  useEffect(() => {
+    fetchData()
+    return () => {}
+  }, [])
+
+  if (loading) {
+    return <Loading />
+  }
+
+  const { fields } = project
+  const {
+    name,
+    desc,
+    image,
+    library,
+    linkLive,
+    linkSource,
+    libraryInfo,
+    todos,
+  } = fields
+
+  // TODO
+  let filename = library.map(({ filename }) =>
+    filename.split('.')[0].split('-').join(' ')
+  )
+
   return (
-    <Wrapper className='container section'>
-      <header className='header'>
-        <h1>
-          <Link to='/'>Portfolio</Link> / project name
-        </h1>
-      </header>
+    <Wrapper className='container '>
+      <NavBanner name={name} />
       {/* Overview */}
       <section>
         <div className='overview'>
           <h2 className='title '>overview</h2>
-          <p className='description content'>
-            desc for the app. Chat app where Lorem ipsum, dolor sit amet
-            consectetur adipisicing elit. Nesciunt ab dignissimos omnis neque,
-            facere eaque iste consequatur alias sunt. Enim!
-          </p>
-          <Images />
-        </div>
-
-        <div className='details'>
-          <h2 className='title '>Details - What I did</h2>
-          <p className='description content'>
-            What I did and how got to where it is now. Used context to? reusable
-            components. more technical
-          </p>
+          <p className='description content'>{desc}</p>
+          <Images images={image} />
         </div>
 
         <div className='libs'>
-          <h2 className='title '>What I used</h2>
+          <h2 className='title '>Built with</h2>
           <ul className='icons'>
-            <li className='icon content'>
-              <Icon Icon={FaReact} color='61dcfc' />
-              <p className='info'>
-                React for the front end and I used hooks to manage the state and
-                fetch items
-              </p>
-            </li>
-            <li className='icon content'>
-              {' '}
-              <Icon Icon={FaReact} color='61dcfc' />
-              <p className='info'>
-                I used Firebase as a back end to store data
-              </p>
-            </li>
-            <li className='icon content'>
-              <Icon Icon={FaReact} color='61dcfc' />
-              <p className='info'>Figma to Design in it</p>
-            </li>
-            <li className='icon content'>
-              {' '}
-              <Icon Icon={FaReact} color='61dcfc' />
-              <p className='info'>Github to Design in it</p>
-            </li>
+            {library.map(({ filename, url, id }) => {
+              return <Icon icon={url} alt={filename} key={id} />
+            })}
           </ul>
+
+          <div className='lib-info'>
+            <Highlighter
+              highlightClassName='highlight '
+              searchWords={filename}
+              autoEscape={true}
+              textToHighlight={libraryInfo}
+            />
+          </div>
+        </div>
+        <div className='todo description'>
+          <h2 className='title '>Next Steps</h2>
+
+          <p className='content todos'>
+            <a href={linkSource} target='_blank' rel='noreferrer'>
+              Check the repo for what I might do next
+            </a>
+            <br />
+          </p>
         </div>
 
-        {/* TODO: Todo app-ish with Admin access for marking off completed tasks */}
-        <Todos />
-
-        <div className='links'>
+        <div className='links description'>
           <h2 className='title'>Links</h2>
-          {/* TODO: DRY - Footer has one */}
-          <Icon Icon={FaGithub} color='lightcoral' link='google.com' />
-          <Icon Icon={FaGithub} color='lightcoral' />
-          <Icon image={FigmaLogo} />
-
-          {/* <Link to='/live'>Live</Link>
-          <Link to='/live'>source</Link> */}
+          <ProjectLinks live={linkLive} source={linkSource} />
         </div>
       </section>
     </Wrapper>
@@ -85,16 +104,26 @@ function SingleProject() {
 
 const Wrapper = styled.section`
   line-height: var(--line-height);
-  .header {
-    margin-bottom: 3rem;
-  }
+
   .description {
     margin-bottom: 3rem;
   }
-  .icons {
-    .icon {
+
+  .libs {
+    margin-bottom: 3rem;
+
+    .icons {
       display: flex;
-      align-items: center;
+      & > * {
+        margin-right: 10px;
+        margin-bottom: 1rem;
+        cursor: pointer;
+      }
+    }
+
+    .lib-info {
+      /* TODO: that seems too hight for this font! BETTER FONT??? */
+      line-height: 275%;
     }
   }
 `
