@@ -99,7 +99,8 @@ h5 {
 
 a {
   text-decoration: none;
-  color: var(--primary-dark);
+
+  color: var(--primary-color);
 }
 a:hover {
   color: var(--primary-color);
@@ -154,7 +155,8 @@ a:hover {
   letter-spacing: 1px;
   transition: all 150ms linear;
 
-  background: var(--white-2);
+  background: var(--background-color);
+  color: var(--primary-color);
 }
 
 .btn-primary:hover {
@@ -170,4 +172,19 @@ a:hover {
 .btn-primary:active {
   box-shadow: 1px 2px 3px #2e2e2e;
   transition: all 250ms linear;
+}
+
+.highlight {
+  text-align: center;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 0 5px;
+  border-radius: var(--radius-small);
+  margin-bottom: 2rem;
+  color: var(--background-color);
+  background-color: var(--primary-color);
+}
+
+.highlight-large {
+  font-size: 25px;
 }

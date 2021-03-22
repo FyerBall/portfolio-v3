@@ -1,7 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useTheme } from '../context/themeContext'
 
-function Toggle({ toggleTheme }) {
+function Toggle() {
+  const { toggleTheme } = useTheme()
+
   return (
     <Wrapper className=''>
       <input type='checkbox' name='' id='theme-toggle' onClick={toggleTheme} />
@@ -26,8 +29,9 @@ const Wrapper = styled.div`
     padding: 1rem;
   }
   #theme-toggle:not(:checked) + label {
-    background-color: #ffdf6c;
-    border: 3px solid #e1c348;
+    background: linear-gradient(to right, #ff9264, #ffcbb6);
+
+    opacity: 0.8;
   }
   #theme-toggle:checked + label {
     background-color: transparent;

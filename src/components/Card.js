@@ -1,11 +1,3 @@
-// ? Check constant for more details
-// -[ ] Container
-// -[ ] Image of the project
-//    -[ ] Multiple images?? Main Image?? carousel maybe
-// -[ ] A short description of the project
-// -[ ] Links
-// Status ? Completed, IP...
-
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
@@ -34,9 +26,11 @@ function Card(project) {
             <span className='label'>{name}</span>
 
             <div className='libs'>
-              {libraryUrl.map((lib, _index) => (
-                <Icon key={_index} icon={lib} alt='Built with' />
-              ))}
+              {libraryUrl
+                .map((lib, _index) => (
+                  <Icon key={_index} icon={lib} alt='Built with' />
+                ))
+                .splice(0, 3)}
             </div>
           </div>
         </div>
@@ -70,7 +64,7 @@ const Wrapper = styled.article`
 
     .image__container {
       /* height: 200px; */
-      width: 300px;
+      /* width: 300px; */
       height: 200px;
     }
     .image {

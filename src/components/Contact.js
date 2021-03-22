@@ -27,9 +27,9 @@ function Contact() {
         data-netlify='true'
       >
         <p className='message'>
-          Fill up the form below or send an email to{' '}
-          <a href={`mailto:${email}`} className='emailMe'>
-            {email}
+          Fill up the form below or send an email{' '}
+          <a href={`mailto:${email}`} className='highlight emailMe'>
+            here
           </a>
         </p>
         <div className='info'>
@@ -113,16 +113,7 @@ const Wrapper = styled.div`
     }
 
     .emailMe {
-      /* text-align: center; */
-      /* width: -webkit-fit-content;
-      width: -moz-fit-content; */
-      /* width: fit-content; */
-      margin: 0 0 0 5px;
-      padding: 0 5px;
-      border-radius: var(--radius-small);
-      margin-bottom: 2rem;
       color: var(--background-color);
-      background-color: var(--primary-color);
     }
   }
 

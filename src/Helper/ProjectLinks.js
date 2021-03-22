@@ -1,40 +1,22 @@
-import React, { useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import { openWindow } from '../Helper/OpenWindow'
-import { addhttp } from '../Helper/addhttp'
+import React from 'react'
 import styled from 'styled-components'
-import githublogo from '../assets/github.svg'
+import { firebase, github } from '../constants/constants'
+import Icon from '../components/Icon'
 
-function ProjectLinks({ links }) {
-  let icons = [
-    {
-      id: 1,
-      name: 'google',
-      icon:
-        'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png',
-    },
-  ]
-
+function ProjectLinks({ live, source }) {
   return (
     <Wrapper>
-      {links.map((link, _id) => {
-        const http = addhttp(link)
-        const name = link.split('.')[0]
-        console.log(name)
-        return (
-          <a href={http} target='_blank' rel='noreferrer'>
-            {name}
-          </a>
-        )
-      })}
+      {live && <Icon icon={firebase} alt='github' link={live} />}
+      {source && <Icon icon={github} alt='github' link={source} />}
     </Wrapper>
   )
 }
 
 const Wrapper = styled.div`
-  a {
-    margin-right: 3rem;
-    font-size: 3rem;
+  display: flex;
+  align-items: center;
+  & > * {
+    margin-right: 1rem;
   }
 `
 

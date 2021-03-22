@@ -13,6 +13,7 @@ import Loading from '../components/Loading'
 import { FaCheckCircle } from 'react-icons/fa'
 import githubLogo from '../assets/github.svg'
 import ProjectLinks from '../Helper/ProjectLinks'
+import NavBanner from '../components/NavBanner'
 
 function SingleProject() {
   const { projectId } = useParams()
@@ -42,21 +43,20 @@ function SingleProject() {
     desc,
     image,
     library,
-    link,
-    details,
+    linkLive,
+    linkSource,
     libraryInfo,
     todos,
   } = fields
+
   // TODO
-  let filename = library.map((item) => item)
+  let filename = library.map(({ filename }) =>
+    filename.split('.')[0].split('-').join(' ')
+  )
 
   return (
     <Wrapper className='container '>
-      <header className='nav'>
-        <h1>
-          <Link to='/'>Portfolio</Link> / {name}
-        </h1>
-      </header>
+      <NavBanner name={name} />
       {/* Overview */}
       <section>
         <div className='overview'>
@@ -64,10 +64,7 @@ function SingleProject() {
           <p className='description content'>{desc}</p>
           <Images images={image} />
         </div>
-        <div className='details'>
-          <h2 className='title '>Details - What I did</h2>
-          <p className='description content'>{details}</p>
-        </div>
+
         <div className='libs'>
           <h2 className='title '>Built with</h2>
           <ul className='icons'>
@@ -76,42 +73,29 @@ function SingleProject() {
             })}
           </ul>
 
-          {/* TODO: Lines are repeating */}
           <div className='lib-info'>
-            {library.map(({ filename, id }) => {
-              let words = filename.split('.')[0]
-              return (
-                <Highlighter
-                  highlightClassName='highlight'
-                  searchWords={[words]}
-                  autoEscape={true}
-                  textToHighlight={libraryInfo}
-                  key={id}
-                />
-              )
-            })}
+            <Highlighter
+              highlightClassName='highlight '
+              searchWords={filename}
+              autoEscape={true}
+              textToHighlight={libraryInfo}
+            />
           </div>
         </div>
-        {/* TODO: Todo app-ish with Admin access for marking off completed tasks */}
-        {/* TODO: Todo container and todo items + auth to access the item and mark them as done?? */}
         <div className='todo description'>
           <h2 className='title '>Next Steps</h2>
-          {todos && todos.length > 0 ? (
-            todos.map((item, _id) => <Todos todo={item} key={_id} />)
-          ) : (
-            <p className='content todos'>
-              <FaCheckCircle /> Completed
-            </p>
-          )}
+
+          <p className='content todos'>
+            <a href={linkSource} target='_blank' rel='noreferrer'>
+              Check the repo for what I might do next
+            </a>
+            <br />
+          </p>
         </div>
 
         <div className='links description'>
           <h2 className='title'>Links</h2>
-          {/* TODO: DRY - Footer has one */}
-          {/* TODO: Hover issue */}
-
-          {/* <Icon icon={githubLogo} alt='Github' link='www.google.com/' /> */}
-          <ProjectLinks links={link} />
+          <ProjectLinks live={linkLive} source={linkSource} />
         </div>
       </section>
     </Wrapper>
@@ -120,21 +104,7 @@ function SingleProject() {
 
 const Wrapper = styled.section`
   line-height: var(--line-height);
-  .nav {
-    margin-bottom: 3rem;
-    background-color: var(--primary-color-light);
-    color: var(--secondary-color);
-    padding: 2rem;
-    border-bottom-right-radius: var(--radius);
-    border-bottom-left-radius: var(--radius);
-    a {
-      transition: var(--transition);
 
-      &:hover {
-        letter-spacing: var(--spacing);
-      }
-    }
-  }
   .description {
     margin-bottom: 3rem;
   }
@@ -154,23 +124,6 @@ const Wrapper = styled.section`
     .lib-info {
       /* TODO: that seems too hight for this font! BETTER FONT??? */
       line-height: 275%;
-    }
-  }
-
-  .highlight {
-    background-color: var(--primary-color);
-    color: var(--secondary-color-light);
-    padding: 0 3px;
-    border-radius: var(--radius-small);
-    text-transform: capitalize;
-    letter-spacing: var(--spacing);
-  }
-
-  .todo {
-    .todos {
-    }
-    svg {
-      color: green;
     }
   }
 `

@@ -69,11 +69,11 @@ const Wrapper = styled.div`
     text-transform: capitalize;
   }
   .images-container {
-    position: relative;
     max-width: 90%;
     margin-left: auto;
     margin-right: auto;
     margin: auto;
+    position: relative;
 
     img {
       /* display: block;
@@ -81,7 +81,9 @@ const Wrapper = styled.div`
       width: 50%;
       border-radius: var(--radius);
       */
+
       max-height: 500px;
+      height: 400px;
 
       width: 100%;
       display: block;
@@ -95,10 +97,10 @@ const Wrapper = styled.div`
     .arrows {
       position: absolute;
       display: flex;
-      width: 106%;
+      width: 103%;
       top: 50%;
-      bottom: 50%;
-      transform: translate(-3%, 0%);
+      left: 50%;
+      transform: translate(-50%, -50%);
       align-items: center;
       justify-content: space-between;
       cursor: pointer;

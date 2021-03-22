@@ -1,13 +1,11 @@
 import React from 'react'
 import Icon from './Icon'
-import { FaGithub } from 'react-icons/fa'
+import { github, githubLink } from '../constants/constants'
 import styled from 'styled-components'
 function Footer() {
   return (
     <Wrapper className=''>
-      {/* TODO: dynamic links  */}
-
-      <Icon Icon={FaGithub} />
+      <Icon icon={github} alt='github' link={githubLink} />
     </Wrapper>
   )
 }
