@@ -11,7 +11,7 @@ function Showcase() {
   const { showcase } = useProjects()
 
   return (
-    <Wrapper className='section'>
+    <Wrapper className='section' id={'work'}>
       <h1 className='title-primary'>Recent work</h1>
 
       <article className='main'>

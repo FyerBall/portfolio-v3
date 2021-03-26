@@ -1,5 +1,6 @@
-import Home from './Home'
-import Showcase from './Showcase'
+import Home from './home'
+import Showcase from './showcase'
 import SingleProject from './SingleProject'
+import Archived from './ArchivedPage'
 
-export { Home, Showcase, SingleProject }
+export { Home, Showcase, SingleProject, Archived }

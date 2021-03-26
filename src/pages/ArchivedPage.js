@@ -1,31 +1,30 @@
-// TODO: DRY! CSS -> Archived Page
+// TODO: DRY! CSS -> Archived js
 import React from 'react'
+import Icon from '../components/Icon'
+import ProjectLinks from '../Helper/ProjectLinks'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 import { useProjects } from '../context/projectContext'
-import TableContent from './TableContent'
-import TableFooter from './TableFooter'
-import TableHeader from './TableHeader'
+import TableHeader from '../components/TableHeader'
+import TableContent from '../components/TableContent'
+import TableFooter from '../components/TableFooter'
 
-function Archived() {
+function ArchivedPage() {
   const { archived } = useProjects()
+
   return (
-    <Wrapper className='section'>
-      <h1 className='title-primary'>Archived</h1>
-
+    <Wrapper className=''>
       <TableHeader />
-      {archived
-        .map((project, i) => {
-          const num = i + 1
-          return <TableContent key={project.id} {...project} num={num} />
-        })
-        .splice(0, 3)}
-
+      {archived.map((project, i) => {
+        const num = i + 1
+        return <TableContent key={project.id} {...project} num={num} />
+      })}
       <TableFooter />
     </Wrapper>
   )
 }
 
-const Wrapper = styled.section`
+const Wrapper = styled.div`
   .header,
   .row {
     display: grid;
@@ -66,18 +65,20 @@ const Wrapper = styled.section`
   }
 
   @media (max-width: 900px) {
-    .header,
-    .row {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    @media (max-width: 900px) {
+      .header,
+      .row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
     }
+
     .number,
     .year {
       display: none;
     }
   }
-
   @media (max-width: 750px) {
     .links-list {
       flex-direction: column;
@@ -85,4 +86,4 @@ const Wrapper = styled.section`
   }
 `
 
-export default Archived
+export default ArchivedPage

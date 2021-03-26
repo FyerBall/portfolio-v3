@@ -1,9 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Amita&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spectral&display=swap');
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -84,6 +89,8 @@ li {
 }
 p {
   font-size: 20px;
+
+  font-family: 'Spectral', serif;
 }
 
 h1,
@@ -172,6 +179,7 @@ a:hover {
 .btn-primary:active {
   box-shadow: 1px 2px 3px #2e2e2e;
   transition: all 250ms linear;
+  transform: scale(0.9);
 }
 
 .highlight {
@@ -191,4 +199,15 @@ a:hover {
 
 .numbered-list {
   list-style: decimal;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+  .title-primary {
+    font-size: 60px;
+    text-align: center;
+  }
 }

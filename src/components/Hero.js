@@ -1,34 +1,38 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { HashLink as Link } from 'react-router-hash-link'
 import styled from 'styled-components'
-import { useTheme } from '../context/themeContext'
+
+import { motion } from 'framer-motion'
+
+const variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 1,
+      when: 'beforeChildren',
+    },
+  },
+}
 
 function Hero() {
-  const { theme, darkMode, lightMode } = useTheme()
-
-  const checkTheme = () => {
-    if (theme === darkMode) {
-      return 'moon'
-    }
-    if (theme === lightMode) {
-      return 'sun'
-    }
-    return theme
-  }
-
   return (
     <Wrapper>
-      <div className='main'>
-        <h1 className='title-big'>Meshari</h1>
+      <motion.div
+        className='main'
+        variants={variants}
+        initial='hidden'
+        animate='visible'
+      >
+        <h1 className='title-big'>Hello!</h1>
         <p className='highlight highlight-large'>
           Let's make a difference, for the better.
         </p>
-        <Link to='/' className='btn btn-primary bouncy'>
+
+        <Link to='#work' className='btn btn-primary bouncy'>
           My work
         </Link>
-      </div>
-
-      <div className={checkTheme()}></div>
+      </motion.div>
     </Wrapper>
   )
 }

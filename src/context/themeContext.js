@@ -4,7 +4,7 @@ export const ThemeContext = createContext()
 const lightMode = 'light-mode'
 const darkMode = 'dark-mode'
 const getPreferredTheme = () => {
-  let theme = lightMode
+  let theme = darkMode
   if (localStorage.getItem('theme')) {
     theme = localStorage.getItem('theme')
   }

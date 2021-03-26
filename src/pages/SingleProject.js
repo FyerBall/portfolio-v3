@@ -122,8 +122,8 @@ const Wrapper = styled.section`
     }
 
     .lib-info {
-      /* TODO: that seems too hight for this font! BETTER FONT??? */
       line-height: 275%;
+      font-family: 'Spectral', serif;
     }
   }
 `

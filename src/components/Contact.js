@@ -7,19 +7,6 @@ function Contact() {
   return (
     <Wrapper className='section'>
       <h1 className='title-primary'>Contact me</h1>
-
-      {/* <form name='contact' method='POST' data-netlify='true'>
-        <p className='message'>Feel free to get in touch</p>
-        <input type='text' name="name"  placeholder='your name' required />
-        <input type='email' name="email"  placeholder='your email' required />
-        <input type='text' placeholder='your role' />
-        <textarea placeholder='your message' cols='30' rows='10'></textarea>
-        
-        <button type='submit' className='btn btn-primary'>
-        send
-        </button>
-      </form> */}
-
       <form
         action='/pages/success'
         name='contact'
@@ -28,22 +15,25 @@ function Contact() {
       >
         <p className='message'>
           Fill up the form below or send an email{' '}
-          <a href={`mailto:${email}`} className='highlight emailMe'>
-            here
+          <a
+            href={`mailto:${email}?subject=[Portfolio]`}
+            className='highlight emailMe'
+          >
+            Here
           </a>
         </p>
-        <div className='info'>
-          <p className='name'>
-            <label>
-              Your Name: <input type='text' name='name' />
-            </label>
-          </p>
-          <p className='email'>
-            <label>
-              Your Email: <input type='email' name='email' />
-            </label>
-          </p>
-        </div>
+
+        <p className='name'>
+          <label>
+            Your Name: <input type='text' name='name' />
+          </label>
+        </p>
+        <p className='email'>
+          <label>
+            Your Email: <input type='email' name='email' />
+          </label>
+        </p>
+
         <p>
           <label>
             Subject: <input type='text' name='email' />
@@ -55,7 +45,7 @@ function Contact() {
           </label>
         </p>
 
-        <button type='submit' className='btn btn-primary'>
+        <button type='submit' className='btn btn-primary '>
           Send
         </button>
       </form>
@@ -71,7 +61,7 @@ const Wrapper = styled.div`
 
     border-radius: var(--radius);
     /* width: 100%; */
-    width: 50%;
+    /* width: 50%; */
 
     box-shadow: 20px 20px 60px var(--shadow-bottom),
       -20px -20px 60px var(--shadow-top);

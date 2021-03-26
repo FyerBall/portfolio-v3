@@ -17,7 +17,7 @@ import { addhttp } from '../Helper/addhttp'
 // import FigmaLogo from '../assets/FigmaLogo.svg'
 
 // TODO: Do you need all of those???
-function Icon({ icon, link, click, image, alt }) {
+function Icon({ icon, link, click, alt }) {
   const http = addhttp(link)
   return (
     <Wrapper>
