@@ -1,9 +1,6 @@
 // TODO: DRY! CSS -> Archived js
 import React from 'react'
-import Icon from '../components/Icon'
-import ProjectLinks from '../Helper/ProjectLinks'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
 import { useProjects } from '../context/projectContext'
 import TableHeader from '../components/TableHeader'
 import TableContent from '../components/TableContent'

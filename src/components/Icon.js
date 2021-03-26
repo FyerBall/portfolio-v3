@@ -8,16 +8,13 @@
 // TRYING TO PASS SVG WITH OR WITHOUT A LINK
 // AND TRYING TO DO THE SAME FOR IMAGES
 
-import React, { useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react'
 import styled from 'styled-components'
-import { openWindow } from '../Helper/OpenWindow'
 import { addhttp } from '../Helper/addhttp'
 
 // import FigmaLogo from '../assets/FigmaLogo.svg'
 
-// TODO: Do you need all of those???
-function Icon({ icon, link, click, alt }) {
+function Icon({ icon, link, alt }) {
   const http = addhttp(link)
   return (
     <Wrapper>

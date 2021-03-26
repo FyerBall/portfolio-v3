@@ -130,6 +130,7 @@ a:hover {
 .content {
   margin: 10px auto;
   color: var(--primary-color);
+  font-family: 'Spectral', serif;
 }
 
 .btn {

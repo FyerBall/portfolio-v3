@@ -6,7 +6,7 @@ export const ProjectsContext = createContext()
 const url = apiUrl
 export const ProjectsProvider = ({ children }) => {
   const [projects, setProjects] = useState([])
-  const [isLoading, setLoading] = useState(true)
+  // const [isLoading, setLoading] = useState(true)
 
   const fetchData = async () => {
     try {

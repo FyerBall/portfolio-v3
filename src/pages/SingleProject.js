@@ -1,17 +1,14 @@
 import React, { useState, useEffect } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import styled from 'styled-components'
 import Icon from '../components/Icon'
 import Images from '../components/Images'
-// import { FaReact } from 'react-icons/fa'
-import Todos from '../components/Todos'
-import { FaGithub } from 'react-icons/fa'
+// import Todos from '../components/Todos'
+
 import axios from 'axios'
-// import FigmaLogo from '../assets/FigmaLogo.svg'
 import Highlighter from 'react-highlight-words'
 import Loading from '../components/Loading'
-import { FaCheckCircle } from 'react-icons/fa'
-import githubLogo from '../assets/github.svg'
+
 import ProjectLinks from '../Helper/ProjectLinks'
 import NavBanner from '../components/NavBanner'
 
@@ -31,6 +28,7 @@ function SingleProject() {
   useEffect(() => {
     fetchData()
     return () => {}
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   if (loading) {
@@ -46,7 +44,6 @@ function SingleProject() {
     linkLive,
     linkSource,
     libraryInfo,
-    todos,
   } = fields
 
   // TODO

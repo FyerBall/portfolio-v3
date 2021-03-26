@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useTheme } from '../context/themeContext'
-import { motion, useCycle } from 'framer-motion'
+import { motion } from 'framer-motion'
 import moon from '../assets/moon.svg'
 import sun from '../assets/sun.svg'
 import Icon from './Icon'
