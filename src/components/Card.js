@@ -95,6 +95,7 @@ const Wrapper = styled.article`
         border-radius: 0.5rem;
         border: 1px solid var(--secondary-color);
         width: fit-content;
+        white-space: nowrap;
       }
       .libs {
         display: flex;

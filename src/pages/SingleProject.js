@@ -36,6 +36,7 @@ function SingleProject() {
   }
 
   const { fields } = project
+
   const {
     name,
     desc,

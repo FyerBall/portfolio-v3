@@ -1,16 +1,21 @@
 import React from 'react'
 import styled from 'styled-components'
-import { aboutMe } from '../constants/constants'
+import { aboutMe, headshot } from '../constants/constants'
+import Highlighter from 'react-highlight-words'
 function AboutMe() {
   return (
     <Wrapper className='section'>
       <h1 className='title-primary'>About me</h1>
       <div className='content'>
-        <p className='aboutMe'>{aboutMe}</p>
-        <img
-          src='https://dl.airtable.com/.attachments/eacd267e00b9f94373a6ae44a8696c03/f3c00776/Cheeseburger.jpg'
-          alt='Meshari'
-        />
+        <p className='aboutMe'>
+          <Highlighter
+            highlightClassName='highlight '
+            searchWords={['Meshari']}
+            autoEscape={true}
+            textToHighlight={aboutMe}
+          />
+        </p>
+        <img src={headshot} alt='Meshari' />
       </div>
     </Wrapper>
   )
@@ -27,7 +32,7 @@ const Wrapper = styled.section`
     img {
       width: 15rem;
       height: 15rem;
-      border-radius: 10rem;
+      border-radius: var(--radius);
       border: 2px solid var(--primary-color);
       padding: 1px;
     }

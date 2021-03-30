@@ -7,9 +7,11 @@ const airtable = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY })
 
 exports.handler = async (event, context) => {
   const { id } = event.queryStringParameters
+
   if (id) {
     try {
       const product = await airtable.retrieve(id)
+
       if (product.error) {
         return {
           statusCode: 404,
@@ -29,6 +31,7 @@ exports.handler = async (event, context) => {
   }
   try {
     const { records } = await airtable.list()
+
     const products = records.map((product) => {
       const { id } = product
       const {

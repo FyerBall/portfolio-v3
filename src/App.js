@@ -11,10 +11,12 @@ function App() {
         <ScrollToTop />
         <Nav />
         <Switch>
-          <Route exact path='/' component={Home} />
           {/* <Route exact path='/showcase' component={Showcase} /> */}
           <Route exact path='/project/:projectId' component={SingleProject} />
           <Route exact path='/archived' component={Archived} />
+          <Router path='/pages/success' component={Archived} />
+
+          <Route exact path='/' component={Home} />
         </Switch>
       </div>
     </Router>

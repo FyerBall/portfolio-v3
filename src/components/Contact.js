@@ -6,12 +6,7 @@ function Contact() {
   return (
     <Wrapper className='section'>
       <h1 className='title-primary'>Contact me</h1>
-      <form
-        action='/pages/success'
-        name='contact'
-        method='POST'
-        data-netlify='true'
-      >
+      <form name='contact' method='POST' data-netlify='true'>
         <p className='message'>
           Fill up the form below or send an email{' '}
           <a
