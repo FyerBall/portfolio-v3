@@ -6,7 +6,17 @@ function Contact() {
   return (
     <Wrapper className='section'>
       <h1 className='title-primary'>Contact me</h1>
-      <form name='contact' method='POST' data-netlify='true'>
+
+      <p className='message'>
+        Feel free to contact me via{' '}
+        <a
+          href={`mailto:${email}?subject=[Portfolio]`}
+          className='highlight emailMe'
+        >
+          email
+        </a>
+      </p>
+      {/* <form name='contact' method='POST' data-netlify='true'>
         <p className='message'>
           Fill up the form below or send an email{' '}
           <a
@@ -42,7 +52,7 @@ function Contact() {
         <button type='submit' className='btn btn-primary '>
           Send
         </button>
-      </form>
+      </form> */}
     </Wrapper>
   )
 }
@@ -90,15 +100,14 @@ const Wrapper = styled.div`
       align-items: center;
       flex-wrap: wrap;
     }
-    .message {
-      margin-bottom: 10px;
-      text-align: center;
-      font-size: 25px;
-    }
-
-    .emailMe {
-      color: var(--background-color);
-    }
+  }
+  .message {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 25px;
+  }
+  .emailMe {
+    color: var(--background-color);
   }
 
   /*
