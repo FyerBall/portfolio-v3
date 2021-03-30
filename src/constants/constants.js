@@ -1,11 +1,13 @@
 import githubLogo from '../assets/github.svg'
 import firebaseLogo from '../assets/FirebaseLogo.svg'
+import livelogo from '../assets/livelogo.png'
 import me from '../assets/me.jpg'
 
 // ICONS
 export const firebase = firebaseLogo
 export const github = githubLogo
 export const headshot = me
+export const live = livelogo
 
 // Links
 export const githubLink = 'https://github.com/FyerBall'

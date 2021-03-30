@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
-import { firebase, github } from '../constants/constants'
+import { live as livelogo, github } from '../constants/constants'
 import Icon from '../components/Icon'
 
 function ProjectLinks({ live, source }) {
   return (
     <Wrapper>
-      {live && <Icon icon={firebase} alt='github' link={live} />}
+      {live && <Icon icon={livelogo} alt='github' link={live} />}
       {source && <Icon icon={github} alt='github' link={source} />}
     </Wrapper>
   )

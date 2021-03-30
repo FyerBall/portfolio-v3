@@ -16,6 +16,7 @@ function Contact() {
           email
         </a>
       </p>
+
       {/* <form name='contact' method='POST' data-netlify='true'>
         <p className='message'>
           Fill up the form below or send an email{' '}
