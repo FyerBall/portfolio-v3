@@ -5,13 +5,13 @@ import Toggle from './Toggle'
 import { useTheme } from '../context/themeContext'
 import { addhttp } from '../Helper/addhttp'
 import { resumeLink } from '../constants/constants'
-import useRGAEvents from '../hooks/useRGAEvents'
+// import useRGAEvents from '../hooks/useRGAEvents'
 function Nav() {
   const { theme, darkMode } = useTheme()
 
   const http = addhttp(resumeLink)
 
-  const RGAEventTracker = useRGAEvents('External Links')
+  // const RGAEventTracker = useRGAEvents('External Links')
   return (
     <Wrapper className=''>
       <div className='nav-container container'>
@@ -19,7 +19,7 @@ function Nav() {
           href={http}
           target='_blank'
           rel='noreferrer'
-          onClick={(e) => RGAEventTracker('Resume Link Visit', http)}
+          // onClick={(e) => RGAEventTracker('Resume Link Visit', http)}
         >
           <h1 className='highlight mb-0'>Resume</h1>
         </a>
