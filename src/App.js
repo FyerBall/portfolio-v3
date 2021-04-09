@@ -8,14 +8,15 @@ import {
 } from 'react-router-dom'
 import Nav from './components/Nav'
 import ScrollToTop from './Helper/ScrollToTop'
-import ReactGA from 'react-ga'
-import { useEffect } from 'react'
-const TrackingId = 'UA-193128299-1'
-ReactGA.initialize(TrackingId)
+// import ReactGA from 'react-ga'
+// import { useEffect } from 'react'
+// TODO: Google Analytics
+// const TrackingId = 'UA-193128299-1'
+// ReactGA.initialize(TrackingId)
 function App() {
-  useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search)
-  })
+  // useEffect(() => {
+  //   ReactGA.pageview(window.location.pathname + window.location.search)
+  // })
   return (
     <Router>
       <div className=''>
@@ -34,4 +35,6 @@ function App() {
   )
 }
 
-export default withRouter(App)
+// export default withRouter(App)
+
+export default App
