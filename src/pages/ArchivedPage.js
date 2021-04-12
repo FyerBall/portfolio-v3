@@ -22,6 +22,7 @@ function ArchivedPage() {
 }
 
 const Wrapper = styled.div`
+  margin-top: 10px;
   .header,
   .row {
     display: grid;

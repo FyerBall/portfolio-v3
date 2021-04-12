@@ -4,7 +4,7 @@ import {
   BrowserRouter as Router,
   Route,
   Switch,
-  withRouter,
+  // withRouter,
 } from 'react-router-dom'
 import Nav from './components/Nav'
 import ScrollToTop from './Helper/ScrollToTop'
