@@ -7,7 +7,7 @@ import {
   // withRouter,
 } from 'react-router-dom'
 import Nav from './components/Nav'
-import ScrollToTop from './Helper/ScrollToTop'
+// import ScrollToTop from './Helper/ScrollToTop'
 // import ReactGA from 'react-ga'
 // import { useEffect } from 'react'
 // TODO: Google Analytics
@@ -20,7 +20,7 @@ function App() {
   return (
     <Router>
       <div className=''>
-        <ScrollToTop />
+        {/* <ScrollToTop /> */}
         <Nav />
         <Switch>
           {/* <Route exact path='/showcase' component={Showcase} /> */}

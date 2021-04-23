@@ -26,8 +26,9 @@ const Wrapper = styled.section`
   .content {
     display: flex;
     align-items: center;
-
+    justify-content: space-between;
     .aboutMe {
+      width: 70%;
     }
     img {
       width: 15rem;
@@ -41,7 +42,7 @@ const Wrapper = styled.section`
   @media (max-width: 900px) {
     .content {
       .aboutMe {
-        /*  */
+        width: 100%;
       }
       flex-direction: column;
       img {

@@ -22,6 +22,7 @@ function Footer() {
 const Wrapper = styled.footer`
   display: grid;
   justify-content: center;
+  padding: 1rem;
 `
 
 export default Footer
