@@ -14,8 +14,10 @@
  from = '/*'
  to = '/index.html'
  status = 200
- 
+
+
+
 [[redirects]]
-  from = "/docs/routing/redirections"
-  to = "/docs/routing/redirects"
-  status = 301
+  from = '/test/*'
+  to = '/test'
+  status = 200
