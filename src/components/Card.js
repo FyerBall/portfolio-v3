@@ -17,10 +17,9 @@ function Card(project) {
             <div className='image__container'>
               <img src={mainImage} alt={name} className='image' />
             </div>
-            <div className='content'>{`${desc.substring(
-              0,
-              charLimit
-            )}...`}</div>
+            <div className='content'>
+              {`${desc.substring(0, charLimit)}...`}
+            </div>
           </div>
           <div className='footer'>
             <span className='label'>{name}</span>

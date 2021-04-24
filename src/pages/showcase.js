@@ -10,12 +10,14 @@ import { useProjects } from '../context/projectContext'
 function Showcase() {
   const { showcase } = useProjects()
 
+  const showcasing = showcase.filter((project) => project.archived !== true)
+
   return (
     <Wrapper className='section' id={'work'}>
       <h1 className='title-primary'>Recent work</h1>
 
       <article className='main'>
-        {showcase.map((project) => (
+        {showcasing.map((project) => (
           <Card key={project.id} {...project} />
         ))}
       </article>
