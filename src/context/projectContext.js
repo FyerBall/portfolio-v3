@@ -18,10 +18,9 @@ export const ProjectsProvider = ({ children }) => {
 
   const showcase = projects.filter((project) => project.archived !== true)
 
-  const archived = console.log('Hellllllo~!')
-  // projects
-  //   .filter((project) => project.archived === true)
-  //   .sort((a, b) => b.year - a.year)
+  const archived = projects
+    .filter((project) => project.archived === true)
+    .sort((a, b) => b.year - a.year)
 
   useEffect(() => {
     fetchData()
