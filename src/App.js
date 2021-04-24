@@ -19,7 +19,7 @@ function App() {
   // })
   return (
     <Router>
-      <div className=''>
+      <div className='' style={{ background: 'red' }}>
         {/* <ScrollToTop /> */}
         <Nav />
         <Switch>
