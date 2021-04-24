@@ -16,9 +16,11 @@ export const ProjectsProvider = ({ children }) => {
     } catch (error) {}
   }
 
-  const showcase = projects.filter((project) => project.archived !== true)
+  const showcase = projects
+  // .filter((project) => project.archived !== true)
 
-  const archived = projects.filter((project) => project.archived === true)
+  const archived = projects
+  // .filter((project) => project.archived === true)
   // .sort((a, b) => b.year - a.year)
 
   useEffect(() => {
