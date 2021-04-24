@@ -16,4 +16,4 @@
 
 [[redirects]]
   from = "/*"
-  to = "/index.html"
+  to = "/index.html/api/*"
