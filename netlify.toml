@@ -10,8 +10,8 @@
  status = 200
 
 [[redirects]]
-  from = "/*"
-  to = "/blog/:splat"
+  from = "/project"
+  to = "/"
 
 
 [[redirects]]
