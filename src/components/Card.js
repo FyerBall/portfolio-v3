@@ -40,6 +40,7 @@ function Card(project) {
 
 const Wrapper = styled.article`
   height: 100%;
+
   a {
     color: inherit;
     text-decoration: none;
@@ -53,10 +54,9 @@ const Wrapper = styled.article`
     margin: 1rem 2px;
     border-radius: var(--radius);
 
-    background: var(--background-color);
+    background: #05254b;
 
-    box-shadow: 10px 20px 30px var(--shadow-bottom),
-      -10px -20px 30px var(--shadow-top);
+    box-shadow: 10px 20px 30px #000, -10px -20px 30px #05254b;
 
     transition: var(--transition);
     height: 100%;
@@ -75,6 +75,7 @@ const Wrapper = styled.article`
 
     .content {
       padding: 4px;
+      color: #f6fafd;
     }
     .footer {
       width: 100%;
@@ -84,11 +85,10 @@ const Wrapper = styled.article`
       padding: 5px 10px;
       border-radius: var(--radius);
       margin-top: 1rem;
-      box-shadow: 16px 17px 30px var(--shadow-bottom),
-        -16px -17px 30px var(--shadow-top);
+      box-shadow: 16px 17px 30px #000, -16px -17px 30px #05254b;
 
       .label {
-        color: var(--primary-color);
+        color: #f6fafd;
         padding: 0.37rem 0.75rem;
         background: transparent;
         border-radius: 0.5rem;

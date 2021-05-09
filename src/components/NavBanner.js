@@ -14,17 +14,17 @@ function NavBanner({ name }) {
 
 const Wrapper = styled.header`
   margin-bottom: 3rem;
-  background-color: var(--primary-color-light);
-  color: var(--secondary-color);
+  background-color: #05254b;
+  color: #55bdca;
   padding: 2rem;
   border-bottom-right-radius: var(--radius);
   border-bottom-left-radius: var(--radius);
-  border-bottom: 1px solid var(--line-color-light);
+  /* border-bottom: 1px solid var(--line-color-light);
   border-right: 1px solid var(--line-color-light);
-  border-left: 1px solid var(--line-color-light);
+  border-left: 1px solid var(--line-color-light); */
   a {
     transition: var(--transition);
-    color: var(--primary-dark);
+    color: #f6fafd;
 
     &:hover {
       letter-spacing: var(--spacing);

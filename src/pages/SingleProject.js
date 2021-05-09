@@ -105,6 +105,7 @@ const Wrapper = styled.section`
 
   .description {
     margin-bottom: 3rem;
+    color: #05254b;
   }
 
   .libs {
@@ -122,7 +123,12 @@ const Wrapper = styled.section`
     .lib-info {
       line-height: 275%;
       font-family: 'Spectral', serif;
+      color: #95aac3;
     }
+  }
+
+  .todo a {
+    color: #95aac3;
   }
 `
 export default SingleProject

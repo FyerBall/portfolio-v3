@@ -14,7 +14,7 @@ function Showcase() {
 
   return (
     <Wrapper className='section' id={'work'}>
-      <h1 className='title-primary'>Recent work</h1>
+      <h1 className='title-primary'>Featured Projects</h1>
 
       <article className='main'>
         {showcasing.map((project) => (
@@ -26,10 +26,15 @@ function Showcase() {
 }
 
 const Wrapper = styled.section`
+  background-color: #f6fafd;
+
   .main {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1rem;
+    gap: 2rem;
+    background-color: #05254b;
+    height: 100%;
+    padding: 4rem 1rem;
   }
 `
 export default Showcase

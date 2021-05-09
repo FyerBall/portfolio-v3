@@ -8,14 +8,7 @@ function ProjectLinks({ live, source }) {
   // const RGAEventTracker = useRGAEvents('External Links')
   return (
     <Wrapper>
-      {live && (
-        <Icon
-          icon={livelogo}
-          alt='github'
-          link={live}
-          // onClick={(e) => RGAEventTracker('Live Link Visit', live)}
-        />
-      )}
+      {live && <Icon icon={livelogo} alt='github' link={live} />}
       {source && (
         <Icon
           icon={github}
@@ -31,9 +24,9 @@ function ProjectLinks({ live, source }) {
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  & > * {
-    margin-right: 1rem;
-  }
+
+  width: 8rem;
+  justify-content: space-between;
 `
 
 export default ProjectLinks

@@ -25,7 +25,7 @@ function App() {
         <Switch>
           {/* <Route exact path='/showcase' component={Showcase} /> */}
           <Route exact path='/project/:projectId' component={SingleProject} />
-          <Route exact path='/archived' component={Archived} />
+          <Route exact path='/work' component={Archived} />
           <Router path='/pages/success' component={Archived} />
 
           <Route exact path='/' component={Home} />

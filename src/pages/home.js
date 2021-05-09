@@ -18,7 +18,7 @@ function Home() {
       <Hero />
 
       <div className='container'>
-        <AboutMe />
+        {/* <AboutMe /> */}
 
         <Showcase />
         {/* TODO: Do you need to wrap them in a div? */}
