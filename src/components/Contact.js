@@ -4,11 +4,41 @@ import { email } from '../constants/constants'
 
 function Contact() {
   return (
-    <Wrapper className='section'>
-      <h1 className='title-primary'>Contact me</h1>
+    <Wrapper className='section' id='contact'>
+      <h1 className=' title-primary'>Want to know more?</h1>
 
       <p className='message'>
-        Feel free to contact me via{' '}
+        What to know more about me or my work process? Drop me a line and let's
+        chat!
+      </p>
+
+      <form name='contact' method='POST' data-netlify='true' onSubmit='submit'>
+        <input type='hidden' name='form-name' value='contact' />
+        <p>
+          <label>
+            Name: <input type='text' name='name' />
+          </label>
+        </p>
+        <p>
+          <label>
+            Email: <input type='email' name='email' />
+          </label>
+        </p>
+
+        <p>
+          <label>
+            Message: <textarea name='message'></textarea>
+          </label>
+        </p>
+        <p>
+          <button className='btn btn__primary-center' type='submit'>
+            Send
+          </button>
+        </p>
+      </form>
+
+      <p className='message'>
+        You can contact me by using this form or by sending me an
         <a
           href={`mailto:${email}?subject=[Portfolio]`}
           className='highlight emailMe'
@@ -16,115 +46,49 @@ function Contact() {
           email
         </a>
       </p>
-
-      {/* <form name='contact' method='POST' data-netlify='true'>
-        <p className='message'>
-          Fill up the form below or send an email{' '}
-          <a
-            href={`mailto:${email}?subject=[Portfolio]`}
-            className='highlight emailMe'
-          >
-            Here
-          </a>
-        </p>
-
-        <p className='name'>
-          <label>
-            Your Name: <input type='text' name='name' />
-          </label>
-        </p>
-        <p className='email'>
-          <label>
-            Your Email: <input type='email' name='email' />
-          </label>
-        </p>
-
-        <p>
-          <label>
-            Subject: <input type='text' name='email' />
-          </label>
-        </p>
-        <p>
-          <label>
-            Message: <textarea name='message' rows='4' cols='150'></textarea>
-          </label>
-        </p>
-
-        <button type='submit' className='btn btn-primary '>
-          Send
-        </button>
-      </form> */}
     </Wrapper>
   )
 }
 
 const Wrapper = styled.div`
-  form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  padding: 1rem;
+  margin-top: 5rem;
+  background-color: #05254b;
 
-    border-radius: var(--radius);
-    /* width: 100%; */
-    /* width: 50%; */
-
-    box-shadow: 20px 20px 60px var(--shadow-bottom),
-      -20px -20px 60px var(--shadow-top);
-    padding: 1rem;
-    margin-left: auto;
-    margin-right: auto;
-
-    input,
-    textarea {
-      outline: none;
-      margin-bottom: 10px;
-      width: 100%;
-      border: none;
-      color: var(--primary-dark);
-      letter-spacing: var(--spacing);
-      border-radius: var(--radius);
-      padding: 1rem;
-    }
-
-    input {
-    }
-    textarea {
-      height: 200px;
-      min-height: 240px;
-    }
-    button {
-      margin: 0 auto;
-    }
-    .info {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
+  .title-primary {
+    color: #f6fafd;
+    text-align: center;
   }
   .message {
-    margin-bottom: 10px;
+    color: #e5e5e5;
     text-align: center;
-    font-size: 25px;
-  }
-  .emailMe {
-    color: var(--background-color);
-  }
-
-  /*
-  form {
-
-   
-   
-
-    
- 
-    input {
+    letter-spacing: var(--spacing);
+    a {
+      color: #f07c41;
     }
-
-   
-  
-  } */
+  }
+  form {
+    label {
+      display: flex;
+      flex-direction: column;
+      color: #f07c41;
+    }
+    input {
+      border: 1px solid #f07c41;
+      height: 3rem;
+    }
+    textarea {
+      border: 1px solid #f07c41;
+      height: 150px;
+    }
+    input,
+    textarea {
+      margin-bottom: 2rem;
+      color: #05254b;
+      font-size: 1.2rem;
+      padding: 1rem;
+    }
+  }
 `
 
 export default Contact

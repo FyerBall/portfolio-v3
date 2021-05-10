@@ -11,6 +11,7 @@
     "airtable-node": "^0.1.20",
     "axios": "^0.21.1",
     "dotenv": "^8.2.0",
+    "express": "^4.17.1",
     "framer-motion": "^4.0.3",
     "netlify": "^6.1.14",
     "react": "^17.0.1",
@@ -21,6 +22,7 @@
     "react-router-dom": "^5.2.0",
     "react-router-hash-link": "^2.4.0",
     "react-scripts": "4.0.3",
+    "serverless-http": "^2.7.0",
     "styled-components": "^5.2.1",
     "uuid": "^8.3.2",
     "web-vitals": "^1.1.0"

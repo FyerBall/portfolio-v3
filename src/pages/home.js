@@ -5,7 +5,6 @@
 // -[ ] GitHub
 
 import React from 'react'
-import AboutMe from '../components/AboutMe'
 import Archived from '../components/Archived'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
@@ -18,8 +17,6 @@ function Home() {
       <Hero />
 
       <div className='container'>
-        <AboutMe />
-
         <Showcase />
         {/* TODO: Do you need to wrap them in a div? */}
         <div className='archived'>
