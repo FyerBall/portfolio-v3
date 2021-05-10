@@ -134,16 +134,14 @@ button[disabled] {
   padding: 5rem 1rem 1rem;
 }
 
-.title {
-  text-align: center;
-  padding-bottom: 5rem;
-}
-
 .title-big {
   font-size: 120px;
 }
 .title-primary {
   font-size: 80px;
+
+  text-align: center;
+  padding-bottom: 5rem;
 }
 
 .content {

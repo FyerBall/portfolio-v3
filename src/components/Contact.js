@@ -14,19 +14,19 @@ function Contact() {
 
       <form name='contact' method='POST' data-netlify='true'>
         <p>
-          <label>
-            Name: <input type='text' name='form-name' />
+          <label htmlFor='name'>
+            Name: <input type='text' id='name' name='name' />
           </label>
         </p>
         <p>
-          <label>
-            Email: <input type='email' name='form-email' />
+          <label htmlFor='email'>
+            Email: <input type='email' name='email' id='email' />
           </label>
         </p>
 
         <p>
-          <label>
-            Message: <textarea name='form-message'></textarea>
+          <label htmlFor='message'>
+            Message: <textarea name='message'></textarea>
           </label>
         </p>
         <p>
