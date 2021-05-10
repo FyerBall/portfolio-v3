@@ -12,8 +12,9 @@ function Contact() {
         chat!
       </p>
 
-      <form name='contact' method='POST' data-netlify='true' onSubmit='submit'>
+      <form name='contact-form' method='POST' data-netlify='true'>
         <input type='hidden' name='form-name' value='contact' />
+
         <p>
           <label>
             Name: <input type='text' name='name' />
