@@ -8,43 +8,12 @@ function Contact() {
       <h1 className=' title-primary'>Want to know more?</h1>
 
       <p className='message'>
-        What to know more about me or my work process? Drop me a line and let's
-        chat!
-      </p>
-
-      <form name='contact-form' method='POST' data-netlify='true'>
-        <input type='hidden' name='form-name' value='contact' />
-
-        <p>
-          <label>
-            Name: <input type='text' name='name' />
-          </label>
-        </p>
-        <p>
-          <label>
-            Email: <input type='email' name='email' />
-          </label>
-        </p>
-
-        <p>
-          <label>
-            Message: <textarea name='message'></textarea>
-          </label>
-        </p>
-        <p>
-          <button className='btn btn__primary-center' type='submit'>
-            Send
-          </button>
-        </p>
-      </form>
-
-      <p className='message'>
-        You can contact me by using this form or by sending me an
+        What to know more about me or my work process?
         <a
           href={`mailto:${email}?subject=[Portfolio]`}
           className='highlight emailMe'
         >
-          email
+          Drop me a line and let's chat!
         </a>
       </p>
     </Wrapper>

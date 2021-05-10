@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import Icon from './Icon'
 import { github, githubLink } from '../constants/constants'
 
-import { HashLink as Link } from 'react-router-hash-link'
+import { email } from '../constants/constants'
 
 function Nav() {
   return (
@@ -13,7 +13,12 @@ function Nav() {
         <h1 className='logo'>Meshari</h1>
       </NavLink>
       <ul className='nav__items'>
-        <Link to='#contact'>Contact</Link>
+        <a
+          href={`mailto:${email}?subject=[Portfolio]`}
+          className='highlight emailMe'
+        >
+          Contact Me
+        </a>
         <Icon icon={github} alt='github' link={githubLink} />
       </ul>
     </Wrapper>
