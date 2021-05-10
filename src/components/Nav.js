@@ -4,31 +4,17 @@ import styled from 'styled-components'
 import Icon from './Icon'
 import { github, githubLink } from '../constants/constants'
 
-import { addhttp } from '../Helper/addhttp'
-import { resumeLink } from '../constants/constants'
-function Nav() {
-  const http = addhttp(resumeLink)
+import { HashLink as Link } from 'react-router-hash-link'
 
-  // const RGAEventTracker = useRGAEvents('External Links')
+function Nav() {
   return (
     <Wrapper>
       <NavLink to='/' className='logo'>
-        Meshari
-        <div className='divider'></div>
+        <h1 className='logo'>Meshari</h1>
       </NavLink>
       <ul className='nav__items'>
-        <NavLink to='/work' className='nav__links'>
-          Work
-        </NavLink>
-        <NavLink to='/' className='nav__links'>
-          Contact
-        </NavLink>
-        <Icon
-          icon={github}
-          alt='github'
-          link={githubLink}
-          // onClick={(e) => RGAEventTracker('Github Link Visit', githubLink)}
-        />
+        <Link to='#contact'>Contact</Link>
+        <Icon icon={github} alt='github' link={githubLink} />
       </ul>
     </Wrapper>
   )
@@ -44,6 +30,8 @@ const Wrapper = styled.nav`
   justify-content: space-between;
   margin-bottom: 4rem;
   padding: 1rem;
+  position: sticky;
+  top: 0;
   .logo {
     color: #f07c41;
     font-size: 2rem;
@@ -51,23 +39,15 @@ const Wrapper = styled.nav`
     transition: var(--transition);
     display: flex;
     flex-direction: column;
+  }
 
-    &:hover .divider {
-      width: 55px;
-    }
-  }
-  .divider {
-    transition: var(--transition);
-    width: 50px;
-    height: 10px;
-    background-color: #55bdca;
-    border-radius: var(--radius);
-  }
   .nav__items {
     display: flex;
     align-items: center;
-    width: 50%;
     justify-content: space-between;
+    & a {
+      margin: 0 2rem;
+    }
   }
 `
 

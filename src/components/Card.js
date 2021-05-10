@@ -40,7 +40,6 @@ function Card(project) {
 
 const Wrapper = styled.article`
   height: 100%;
-
   a {
     color: inherit;
     text-decoration: none;

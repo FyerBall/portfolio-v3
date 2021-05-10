@@ -17,11 +17,10 @@ const Wrapper = styled.header`
   background-color: #05254b;
   color: #55bdca;
   padding: 2rem;
+
   border-bottom-right-radius: var(--radius);
   border-bottom-left-radius: var(--radius);
-  /* border-bottom: 1px solid var(--line-color-light);
-  border-right: 1px solid var(--line-color-light);
-  border-left: 1px solid var(--line-color-light); */
+
   a {
     transition: var(--transition);
     color: #f6fafd;

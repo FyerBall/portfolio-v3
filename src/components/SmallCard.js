@@ -1,12 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
-import Icon from './Icon'
 import ProjectLinks from '../Helper/ProjectLinks'
 
 function Card(projects) {
-  const { id, imageUrl, name, linkLive, linkSource } = projects
-  console.log(id)
+  const { imageUrl, name, linkLive, linkSource } = projects
+  console.log(imageUrl[0])
 
   return (
     <Wrapper>
@@ -14,7 +12,7 @@ function Card(projects) {
         <div className='header'>
           <h3 className='title'>{name}</h3>
           <div className='image__container'>
-            <img src={imageUrl} alt={name} className='image' />
+            <img src={imageUrl[0]} alt={name} className='image' />
           </div>
         </div>
         <div className='footer'>

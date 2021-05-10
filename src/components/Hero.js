@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-
+import { HashLink } from 'react-router-hash-link'
 function Hero() {
   return (
     <Wrapper>
@@ -12,8 +12,8 @@ function Hero() {
       </h1>
       <p className='reach'>
         Find out more about
-        <Link to='/'> my work </Link>
-        or <Link to='/'>get in touch</Link>.
+        <Link to='/work'> my work </Link>
+        or <HashLink to='#contact'>get in touch</HashLink>.
       </p>
     </Wrapper>
   )
@@ -28,13 +28,10 @@ const Wrapper = styled.section`
   .me {
     color: #05254b;
     line-height: var(--line-height);
+    text-transform: none;
   }
   .reach {
-    color: #95aac3;
-
-    a {
-      color: #f07c41;
-    }
+    color: #aacef9;
   }
 `
 

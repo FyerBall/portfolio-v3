@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom'
 import styled from 'styled-components'
 import Icon from '../components/Icon'
 import Images from '../components/Images'
-// import Todos from '../components/Todos'
 
 import axios from 'axios'
 import Highlighter from 'react-highlight-words'
@@ -103,6 +102,9 @@ function SingleProject() {
 const Wrapper = styled.section`
   line-height: var(--line-height);
 
+  section {
+    padding: 1rem;
+  }
   .description {
     margin-bottom: 3rem;
     color: #05254b;
@@ -110,7 +112,7 @@ const Wrapper = styled.section`
 
   .libs {
     margin-bottom: 3rem;
-
+    font-size: 1.2rem;
     .icons {
       display: flex;
       & > * {
@@ -123,12 +125,8 @@ const Wrapper = styled.section`
     .lib-info {
       line-height: 275%;
       font-family: 'Spectral', serif;
-      color: #95aac3;
+      color: #3b8ff2;
     }
-  }
-
-  .todo a {
-    color: #95aac3;
   }
 `
 export default SingleProject

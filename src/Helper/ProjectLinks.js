@@ -8,7 +8,7 @@ function ProjectLinks({ live, source }) {
   // const RGAEventTracker = useRGAEvents('External Links')
   return (
     <Wrapper>
-      {live && <Icon icon={livelogo} alt='github' link={live} />}
+      {live && <Icon github icon={livelogo} alt='github' link={live} />}
       {source && (
         <Icon
           icon={github}
@@ -26,7 +26,7 @@ const Wrapper = styled.div`
   align-items: center;
 
   width: 8rem;
-  justify-content: space-between;
+  justify-content: space-evenly;
 `
 
 export default ProjectLinks

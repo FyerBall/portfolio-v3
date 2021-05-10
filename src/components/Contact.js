@@ -4,8 +4,8 @@ import { email } from '../constants/constants'
 
 function Contact() {
   return (
-    <Wrapper className='section'>
-      <h1 className='title-primary'>Want to know more?</h1>
+    <Wrapper className='section' id='contact'>
+      <h1 className=' title-primary'>Want to know more?</h1>
 
       <p className='message'>
         What to know more about me or my work process? Drop me a line and let's
@@ -56,6 +56,7 @@ const Wrapper = styled.div`
 
   .title-primary {
     color: #f6fafd;
+    text-align: center;
   }
   .message {
     color: #e5e5e5;
@@ -77,8 +78,11 @@ const Wrapper = styled.div`
     }
     textarea {
       border: 1px solid #f07c41;
-
       height: 150px;
+    }
+    input,
+    textarea {
+      margin-bottom: 2rem;
     }
   }
 `

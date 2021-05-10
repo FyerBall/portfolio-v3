@@ -1,11 +1,7 @@
-// -[x] Main Projects
-// -[ ] Archived Projects to show growth?
-// -[ ] Contact
 import React from 'react'
 import styled from 'styled-components'
 import Card from '../components/Card'
 import { useProjects } from '../context/projectContext'
-// import Skeleton from '@material-ui/lab/Skeleton'
 
 function Showcase() {
   const { showcase } = useProjects()
@@ -14,7 +10,7 @@ function Showcase() {
 
   return (
     <Wrapper className='section' id={'work'}>
-      <h1 className='title-primary'>Featured Projects</h1>
+      <h1 className='title title-primary'>Featured Projects</h1>
 
       <article className='main'>
         {showcasing.map((project) => (
@@ -27,6 +23,7 @@ function Showcase() {
 
 const Wrapper = styled.section`
   background-color: #f6fafd;
+  border-radius: var(--radius);
 
   .main {
     display: grid;
@@ -35,6 +32,7 @@ const Wrapper = styled.section`
     background-color: #05254b;
     height: 100%;
     padding: 4rem 1rem;
+    border-radius: var(--radius);
   }
 `
 export default Showcase
