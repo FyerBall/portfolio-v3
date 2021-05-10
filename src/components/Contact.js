@@ -15,18 +15,18 @@ function Contact() {
       <form name='contact' method='POST' data-netlify='true' onSubmit='submit'>
         <input type='hidden' name='form-name' value='contact' />
         <p>
-          <label htmlFor='name'>
-            Name: <input type='text' id='name' name='name' />
+          <label>
+            Name: <input type='text' name='name' />
           </label>
         </p>
         <p>
-          <label htmlFor='email'>
-            Email: <input type='email' name='email' id='email' />
+          <label>
+            Email: <input type='email' name='email' />
           </label>
         </p>
 
         <p>
-          <label htmlFor='message'>
+          <label>
             Message: <textarea name='message'></textarea>
           </label>
         </p>
