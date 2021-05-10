@@ -27,6 +27,24 @@
     <title>Meshari</title>
   </head>
   <body>
+    <form
+      name="contact-form"
+      netlify
+      netlify-honeypot="bot-field"
+      action="/"
+      hidden
+    >
+      <p>
+        <label> Name: <input type="text" name="name" /> </label>
+      </p>
+      <p>
+        <label> Email: <input type="email" name="email" /> </label>
+      </p>
+
+      <p>
+        <label> Message: <textarea name="message"></textarea></label>
+      </p>
+    </form>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--
