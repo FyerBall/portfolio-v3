@@ -15,18 +15,18 @@ function Contact() {
       <form name='contact' method='POST' data-netlify='true'>
         <p>
           <label>
-            Name: <input type='text' name='name' />
+            Name: <input type='text' name='form-name' />
           </label>
         </p>
         <p>
           <label>
-            Email: <input type='email' name='email' />
+            Email: <input type='email' name='form-email' />
           </label>
         </p>
 
         <p>
           <label>
-            Message: <textarea name='message'></textarea>
+            Message: <textarea name='form-message'></textarea>
           </label>
         </p>
         <p>
@@ -83,6 +83,9 @@ const Wrapper = styled.div`
     input,
     textarea {
       margin-bottom: 2rem;
+      color: #05254b;
+      font-size: 1.2rem;
+      padding: 1rem;
     }
   }
 `
