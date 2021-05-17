@@ -6,7 +6,7 @@ import SmallCard from './SmallCard'
 
 function Archived() {
   const { archived } = useProjects()
-  const [visible, setVisible] = useState(4)
+  const [visible, setVisible] = useState(3)
   const length = archived.length
 
   const showMore = () => {
