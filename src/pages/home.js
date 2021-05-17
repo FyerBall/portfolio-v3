@@ -7,7 +7,7 @@
 import React from 'react'
 import Archived from '../components/Archived'
 import Contact from '../components/Contact'
-import Footer from '../components/Footer'
+// import Footer from '../components/Footer'
 import Hero from '../components/Hero'
 import { Showcase } from './index'
 
@@ -23,7 +23,7 @@ function Home() {
           <Archived />
         </div>
         <Contact />
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </div>
   )

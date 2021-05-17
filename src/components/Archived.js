@@ -10,7 +10,7 @@ function Archived() {
   const length = archived.length
 
   const showMore = () => {
-    setVisible(length > visible && visible + 2)
+    setVisible(length > visible && visible + 3)
   }
   return (
     <Wrapper className='section'>
@@ -43,7 +43,7 @@ const Wrapper = styled.section`
   padding: 1rem;
   article {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 3rem;
   }
 

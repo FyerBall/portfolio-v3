@@ -54,6 +54,11 @@ const Wrapper = styled.nav`
       margin: 0 2rem;
     }
   }
+
+  @media (max-width: 320px) {
+    position: static;
+    flex-direction: column;
+  }
 `
 
 export default Nav
